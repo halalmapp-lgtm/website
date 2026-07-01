@@ -1,0 +1,29 @@
+# Netlify / static host config for HalalMapp marketing site
+# Publish directory: website/
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy/"
+  status = 301
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms/"
+  status = 301
+
+[[redirects]]
+  from = "/subscribe/success"
+  to = "/subscribe/success/"
+  status = 301
+
+[[redirects]]
+  from = "/subscribe/cancel"
+  to = "/subscribe/cancel/"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

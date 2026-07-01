@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 420" fill="none" aria-hidden="true">
+  <!-- Base terrain -->
+  <rect width="280" height="420" fill="#e8e4df"/>
+  <!-- Lake Ontario -->
+  <path d="M0 320 Q70 300 140 310 T280 295 L280 420 L0 420 Z" fill="#a8d4f5"/>
+  <path d="M0 325 Q80 308 150 318 T280 302 L280 420 L0 420 Z" fill="#8ec5ef" opacity="0.5"/>
+  <!-- Parks -->
+  <ellipse cx="55" cy="95" rx="38" ry="28" fill="#c5deb8"/>
+  <ellipse cx="210" cy="130" rx="32" ry="22" fill="#b8d4a8"/>
+  <rect x="175" y="55" width="55" height="35" rx="6" fill="#c8e0b8" transform="rotate(-8 202 72)"/>
+  <!-- City blocks -->
+  <rect x="12" y="145" width="42" height="32" fill="#ddd9d4" rx="2"/>
+  <rect x="58" y="155" width="36" height="28" fill="#d5d1cc" rx="2"/>
+  <rect x="98" y="140" width="48" height="38" fill="#ddd9d4" rx="2"/>
+  <rect x="150" y="160" width="40" height="30" fill="#d0ccc7" rx="2"/>
+  <rect x="195" y="148" width="44" height="36" fill="#ddd9d4" rx="2"/>
+  <rect x="25" y="195" width="50" height="35" fill="#d5d1cc" rx="2"/>
+  <rect x="80" y="188" width="38" height="40" fill="#ddd9d4" rx="2"/>
+  <rect x="122" y="200" width="55" height="32" fill="#d0ccc7" rx="2"/>
+  <rect x="182" y="192" width="42" height="38" fill="#ddd9d4" rx="2"/>
+  <rect x="230" y="205" width="35" height="28" fill="#d5d1cc" rx="2"/>
+  <rect x="15" y="245" width="45" height="30" fill="#ddd9d4" rx="2"/>
+  <rect x="65" y="238" width="52" height="35" fill="#d0ccc7" rx="2"/>
+  <rect x="125" y="250" width="40" height="28" fill="#ddd9d4" rx="2"/>
+  <rect x="170" y="240" width="48" height="34" fill="#d5d1cc" rx="2"/>
+  <rect x="225" y="248" width="38" height="30" fill="#ddd9d4" rx="2"/>
+  <rect x="40" y="285" width="44" height="28" fill="#d0ccc7" rx="2"/>
+  <rect x="95" y="278" width="50" height="32" fill="#ddd9d4" rx="2"/>
+  <rect x="155" y="288" width="42" height="26" fill="#d5d1cc" rx="2"/>
+  <!-- Major roads -->
+  <path d="M0 120 H280" stroke="#fff" stroke-width="10"/>
+  <path d="M0 175 H280" stroke="#fff" stroke-width="7"/>
+  <path d="M0 230 H280" stroke="#fff" stroke-width="8"/>
+  <path d="M0 275 H280" stroke="#fff" stroke-width="6"/>
+  <path d="M70 0 V320" stroke="#fff" stroke-width="9"/>
+  <path d="M140 0 V310" stroke="#fff" stroke-width="11"/>
+  <path d="M210 0 V300" stroke="#fff" stroke-width="8"/>
+  <!-- Secondary roads -->
+  <path d="M0 55 H280" stroke="#fff" stroke-width="5"/>
+  <path d="M0 310 H280" stroke="#fff" stroke-width="4"/>
+  <path d="M35 0 V280" stroke="#fff" stroke-width="5"/>
+  <path d="M105 0 V290" stroke="#fff" stroke-width="5"/>
+  <path d="M175 0 V270" stroke="#fff" stroke-width="5"/>
+  <path d="M245 0 V260" stroke="#fff" stroke-width="5"/>
+  <!-- Highway accent -->
+  <path d="M140 0 V310" stroke="#fdd835" stroke-width="2" opacity="0.6"/>
+  <path d="M0 230 H280" stroke="#fdd835" stroke-width="1.5" opacity="0.5"/>
+</svg>
