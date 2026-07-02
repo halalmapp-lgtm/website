@@ -121,6 +121,30 @@ a:hover {
   color: var(--green-dark);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-signin {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.625rem 1.25rem;
+  border: 1.5px solid var(--green);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--green-dark) !important;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-signin:hover {
+  background: rgba(127, 176, 105, 0.1);
+  color: var(--green-dark) !important;
+  transform: translateY(-1px);
+}
+
 .nav-cta {
   display: inline-flex;
   align-items: center;
@@ -168,6 +192,11 @@ a:hover {
   font-weight: 500;
   color: var(--text-secondary);
   border-bottom: 1px solid var(--border);
+}
+
+.nav-mobile a.nav-mobile-signin {
+  color: var(--green-dark);
+  font-weight: 600;
 }
 
 .nav-mobile a:last-child {
