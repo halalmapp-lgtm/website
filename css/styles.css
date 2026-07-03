@@ -208,7 +208,7 @@ a:hover {
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 4.5rem 0 5rem;
+  padding: 5.5rem 0 5rem;
   background: linear-gradient(160deg, var(--green-dark) 0%, #3d6b35 45%, #2d5230 100%);
   color: var(--white);
 }
@@ -216,6 +216,7 @@ a:hover {
 .hero-pattern {
   position: absolute;
   inset: 0;
+  z-index: 0;
   opacity: 0.12;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23D4AF37' stroke-width='0.6'%3E%3Cpolygon points='40,4 76,22 76,58 40,76 4,58 4,22'/%3E%3Cpolygon points='40,16 64,28 64,52 40,64 16,52 16,28'/%3E%3Ccircle cx='40' cy='40' r='8'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 80px 80px;
@@ -227,8 +228,46 @@ a:hover {
   to { transform: translate(-80px, -80px) rotate(360deg); }
 }
 
+.hero-lanterns {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  padding: 0 0.5rem;
+  mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
+}
+
+.hero-lanterns-art {
+  width: min(100%, 72rem);
+  height: auto;
+  max-height: 11.5rem;
+  object-fit: contain;
+  object-position: top center;
+  opacity: 0.92;
+  transform-origin: top center;
+  animation: hero-lanterns-sway 7s ease-in-out infinite alternate;
+  filter: drop-shadow(0 8px 28px rgba(212, 175, 55, 0.12));
+}
+
+@keyframes hero-lanterns-sway {
+  from { transform: rotate(-0.6deg) translateY(0); }
+  to { transform: rotate(0.6deg) translateY(3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-lanterns-art {
+    animation: none;
+  }
+}
+
 .hero-grid {
   position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
@@ -1022,7 +1061,12 @@ section {
   }
 
   .hero {
-    padding: 3rem 0 4rem;
+    padding: 3.25rem 0 4rem;
+  }
+
+  .hero-lanterns-art {
+    max-height: 8.5rem;
+    opacity: 0.78;
   }
 
   section {
