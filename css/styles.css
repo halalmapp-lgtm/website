@@ -203,12 +203,36 @@ a:hover {
   border-bottom: none;
 }
 
+/* ─── Header lantern garland (single centered strip under nav) ─── */
+
+.header-lanterns {
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  margin-top: -1px;
+  background: transparent;
+  pointer-events: none;
+  position: relative;
+  z-index: 2;
+}
+
+.header-lanterns-art {
+  width: min(48rem, 100%);
+  height: auto;
+  max-height: 5.5rem;
+  object-fit: contain;
+  object-position: center top;
+  opacity: 0.95;
+  filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.15));
+}
+
 /* ─── Hero ─── */
 
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 5.5rem 0 5rem;
+  margin-top: -3.25rem;
+  padding: 6.5rem 0 5rem;
   background: linear-gradient(160deg, var(--green-dark) 0%, #3d6b35 45%, #2d5230 100%);
   color: var(--white);
 }
@@ -226,43 +250,6 @@ a:hover {
 @keyframes drift {
   from { transform: translate(0, 0) rotate(0deg); }
   to { transform: translate(-80px, -80px) rotate(360deg); }
-}
-
-.hero-lanterns {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  pointer-events: none;
-  display: flex;
-  justify-content: center;
-  padding: 0 0.5rem;
-  mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
-}
-
-.hero-lanterns-art {
-  width: min(100%, 72rem);
-  height: auto;
-  max-height: 11.5rem;
-  object-fit: contain;
-  object-position: top center;
-  opacity: 0.92;
-  transform-origin: top center;
-  animation: hero-lanterns-sway 7s ease-in-out infinite alternate;
-  filter: drop-shadow(0 8px 28px rgba(212, 175, 55, 0.12));
-}
-
-@keyframes hero-lanterns-sway {
-  from { transform: rotate(-0.6deg) translateY(0); }
-  to { transform: rotate(0.6deg) translateY(3px); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-lanterns-art {
-    animation: none;
-  }
 }
 
 .hero-grid {
@@ -1061,12 +1048,12 @@ section {
   }
 
   .hero {
-    padding: 3.25rem 0 4rem;
+    margin-top: -2.5rem;
+    padding: 5rem 0 4rem;
   }
 
-  .hero-lanterns-art {
-    max-height: 8.5rem;
-    opacity: 0.78;
+  .header-lanterns-art {
+    max-height: 3.75rem;
   }
 
   section {
