@@ -26,7 +26,7 @@
         <a href="#contact">Contact</a>
         <div class="nav-actions">
           <a href="https://app.halalmapp.com" class="nav-signin">Sign in</a>
-          <a href="#download" class="nav-cta">Get the App</a>
+          <a href="#waitlist" class="nav-cta">Join the waitlist</a>
         </div>
       </nav>
       <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
@@ -41,17 +41,63 @@
       <a href="#businesses">For Businesses</a>
       <a href="#contact">Contact</a>
       <a href="https://app.halalmapp.com">Sign in</a>
-      <a href="#download">Get the App</a>
+      <a href="#waitlist">Join the waitlist</a>
     </nav>
   </header>
-
-  <div class="header-lanterns" aria-hidden="true">
-    <img class="header-lanterns-art" src="/assets/header-lanterns.svg?v=1" alt="" width="900" height="120" decoding="async">
-  </div>
 
   <main>
     <section class="hero">
       <div class="hero-pattern" aria-hidden="true"></div>
+      <div class="header-lanterns" aria-hidden="true">
+        <div class="header-lanterns-art"></div>
+      </div>
+      <div class="hero-calligraphy" aria-hidden="true">
+        <svg class="hero-calligraphy-art" viewBox="0 0 1400 460" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" focusable="false">
+          <defs>
+            <linearGradient id="calliGold" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#E6C65C" stop-opacity="0.55"/>
+              <stop offset="55%" stop-color="#D4AF37" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+            </linearGradient>
+            <g id="calliFlourish" fill="none" stroke="url(#calliGold)" stroke-width="2" stroke-linecap="round">
+              <path d="M20 196c70-52 132 26 196-14 64-40 118 18 176-16 58-34 108 22 168-8"/>
+              <path d="M44 250c66-40 120 24 182-8 62-32 112 20 170-8 58-28 104 18 156-6"/>
+              <path d="M110 300c58-30 106 18 160-6 54-24 98 14 146-4"/>
+              <path d="M150 182c-6-26 10-48 34-52-2 28-14 44-34 52z" fill="url(#calliGold)" stroke="none"/>
+              <path d="M300 216c-2-26 16-46 40-46-6 26-18 42-40 46z" fill="url(#calliGold)" stroke="none"/>
+              <path d="M470 172c-8-24 6-48 30-54 0 28-10 46-30 54z" fill="url(#calliGold)" stroke="none"/>
+              <path d="M236 268c-4-24 12-44 34-46-4 26-14 40-34 46z" fill="url(#calliGold)" stroke="none"/>
+              <circle cx="86" cy="214" r="5" fill="url(#calliGold)" stroke="none"/>
+              <circle cx="236" cy="188" r="4" fill="url(#calliGold)" stroke="none"/>
+              <circle cx="392" cy="198" r="5" fill="url(#calliGold)" stroke="none"/>
+              <circle cx="548" cy="176" r="4" fill="url(#calliGold)" stroke="none"/>
+            </g>
+            <g id="calliRosette" fill="none" stroke="url(#calliGold)" stroke-width="1.5">
+              <polygon points="0,-30 8,-9 30,0 8,9 0,30 -8,9 -30,0 -8,-9"/>
+              <circle r="11"/>
+              <circle r="21"/>
+            </g>
+          </defs>
+
+          <use href="#calliFlourish"/>
+          <use href="#calliFlourish" transform="translate(1400,0) scale(-1,1)"/>
+
+          <g fill="none" stroke="url(#calliGold)" stroke-width="1.5">
+            <circle cx="700" cy="196" r="152"/>
+            <circle cx="700" cy="196" r="126"/>
+            <polygon points="840,196 799,97 700,56 601,97 560,196 601,295 700,336 799,295"/>
+            <polygon points="700,44 852,196 700,348 548,196"/>
+          </g>
+
+          <g font-family="Amiri, 'Noto Naskh Arabic', serif" font-weight="700" fill="url(#calliGold)" text-anchor="middle" direction="rtl">
+            <text x="700" y="238" font-size="150">حلال</text>
+            <text x="700" y="300" font-size="42" letter-spacing="6">طيّب ومبارك</text>
+          </g>
+
+          <use href="#calliRosette" transform="translate(240,120)"/>
+          <use href="#calliRosette" transform="translate(1160,120)"/>
+        </svg>
+      </div>
       <div class="container hero-grid">
         <div class="hero-content">
           <div class="hero-badge">
@@ -69,92 +115,76 @@
             <a href="#businesses" class="btn btn-ghost">List your restaurant</a>
           </div>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="phone-mockup">
+        <div class="hero-visual">
+          <div class="phone-mockup" aria-hidden="false">
+            <div class="iphone-btn iphone-btn--silent" aria-hidden="true"></div>
+            <div class="iphone-btn iphone-btn--vol-up" aria-hidden="true"></div>
+            <div class="iphone-btn iphone-btn--vol-down" aria-hidden="true"></div>
+            <div class="iphone-btn iphone-btn--power" aria-hidden="true"></div>
             <div class="phone-screen">
-              <div class="phone-status-bar">
-                <span class="phone-time">9:41</span>
-                <span class="phone-status-icons">
-                  <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><rect x="0" y="6" width="2" height="4" rx="0.5"/><rect x="3" y="4" width="2" height="6" rx="0.5"/><rect x="6" y="2" width="2" height="8" rx="0.5"/><rect x="9" y="0" width="2" height="10" rx="0.5"/></svg>
-                </span>
-              </div>
-              <div class="phone-map-area">
-                <img class="phone-map-img" src="/assets/phone-map.svg" alt="" width="280" height="420">
-                <div class="map-pins">
-                  <span class="map-pin"></span>
-                  <span class="map-pin"></span>
-                  <span class="map-pin map-pin--active"></span>
-                  <span class="map-pin"></span>
-                  <span class="map-pin map-pin--gold"></span>
-                </div>
-                <div class="phone-search-bar">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
-                  <span>Halal near me</span>
-                </div>
-                <div class="phone-sheet">
-                  <div class="phone-sheet-handle"></div>
-                  <div class="phone-sheet-header">
-                    <h3>Lahore Tikka House</h3>
-                    <span class="halal-badge">
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                      High
-                    </span>
-                  </div>
-                  <p class="phone-sheet-meta">★ 4.6 · Pakistani · 0.4 km</p>
-                  <p class="phone-sheet-address">100 Gerrard St E, Toronto</p>
-                  <div class="phone-sheet-deal">
-                    <span class="deal-badge">🎟️ 15% off lunch combo</span>
-                  </div>
-                  <div class="phone-sheet-actions">
-                    <span class="sheet-btn sheet-btn--primary">View profile</span>
-                    <span class="sheet-btn sheet-btn--icon">♡</span>
-                  </div>
-                </div>
-              </div>
+              <div class="iphone-island" aria-hidden="true"></div>
+              <img
+                class="phone-screenshot"
+                src="/assets/app-screenshot.png"
+                alt="The HalalMapp app showing halal restaurants across downtown Toronto on the map"
+                width="1170"
+                height="2532"
+                decoding="async">
+              <div class="iphone-home-indicator" aria-hidden="true"></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="features">
+    <section id="features" class="features-section">
       <div class="container">
-        <span class="section-label">Features</span>
-        <h2 class="section-title">Everything you need to eat halal with confidence</h2>
-        <p class="section-subtitle">
-          HalalMapp combines map discovery, community knowledge, and local business deals — launching first in Toronto with over 2,000 halal restaurants.
-        </p>
-        <div class="features-grid">
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🗺️</div>
-            <h3>Map discovery</h3>
-            <p>Explore halal restaurants on an interactive map. Search by location, filter results, and find spots wherever you travel.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">✅</div>
-            <h3>Community halal reports</h3>
-            <p>See what the community says about halal status. Contribute reports to help others dine with peace of mind.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">⭐</div>
-            <h3>Reviews &amp; favorites</h3>
-            <p>Read and write reviews, save your go-to restaurants, and build a personal list of trusted halal places.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🎟️</div>
-            <h3>Deals &amp; coupons</h3>
-            <p>Claim exclusive offers from participating restaurants. Redeem coupons in-store and keep track of your savings.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🏪</div>
-            <h3>Business dashboard</h3>
-            <p>Restaurant owners can claim listings, manage their profile, create deals, and track customer engagement.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🔒</div>
-            <h3>Secure sign-in</h3>
-            <p>Sign in with Google or email. Your account syncs across devices so favorites and coupons are always with you.</p>
-          </article>
+        <div class="features-intro">
+          <span class="section-label">On the map</span>
+          <h2 class="section-title">Halal spots, found nearby</h2>
+          <p class="section-subtitle">
+            Browse Toronto’s growing list of halal restaurants on a live map — then open a place for reviews, community reports, and deals.
+          </p>
+        </div>
+
+        <div class="features-layout">
+          <div class="photo-mosaic" aria-label="Halal restaurant food and dining">
+            <figure class="photo-mosaic-item photo-mosaic-item--tall">
+              <img src="/assets/photos/grill.jpg" alt="Grilled meat and sides at a restaurant" width="800" height="1000" loading="lazy">
+            </figure>
+            <figure class="photo-mosaic-item">
+              <img src="/assets/photos/dining.jpg" alt="Restaurant dining room with guests" width="800" height="600" loading="lazy">
+            </figure>
+            <figure class="photo-mosaic-item">
+              <img src="/assets/photos/platter.jpg" alt="Shared platter of grilled food" width="800" height="600" loading="lazy">
+            </figure>
+            <figure class="photo-mosaic-item photo-mosaic-item--wide">
+              <img src="/assets/photos/kebabs.jpg" alt="Fresh kebabs ready to serve" width="1200" height="700" loading="lazy">
+            </figure>
+          </div>
+
+          <ul class="feature-list">
+            <li>
+              <h3>Map discovery</h3>
+              <p>Search by area, zoom the map, and filter until you find somewhere that fits tonight.</p>
+            </li>
+            <li>
+              <h3>Community reports</h3>
+              <p>See how other diners describe a spot’s halal status before you go.</p>
+            </li>
+            <li>
+              <h3>Reviews &amp; favorites</h3>
+              <p>Read recent visits, leave your own notes, and keep a shortlist of places you trust.</p>
+            </li>
+            <li>
+              <h3>Deals &amp; coupons</h3>
+              <p>Claim offers from participating restaurants and redeem them when you dine in.</p>
+            </li>
+            <li>
+              <h3>Business tools</h3>
+              <p>Owners can claim a listing, update the profile, and run coupons from one dashboard.</p>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -163,34 +193,23 @@
       <div class="container split-grid">
         <div class="split-content">
           <span class="section-label">For diners</span>
-          <h2 class="section-title">Eat halal, wherever you are</h2>
+          <h2 class="section-title">Tonight’s dinner, sorted</h2>
           <p class="section-subtitle" style="margin-bottom: 0;">
-            Whether you're exploring a new neighborhood or looking for tonight's dinner, HalalMapp puts trusted halal options at your fingertips.
+            Open the map, check what’s nearby, and walk in knowing the community has weighed in on the place.
           </p>
           <ul>
-            <li><span class="check-icon">✓</span> Find halal restaurants on a live map near your location</li>
-            <li><span class="check-icon">✓</span> Check community halal confidence reports before you visit</li>
-            <li><span class="check-icon">✓</span> Save favorites and access them instantly</li>
-            <li><span class="check-icon">✓</span> Claim and redeem exclusive deals from local businesses</li>
-            <li><span class="check-icon">✓</span> Share reviews to help the community</li>
+            <li><span class="check-icon">✓</span> Find halal restaurants on a live map near you</li>
+            <li><span class="check-icon">✓</span> Read community halal reports before you visit</li>
+            <li><span class="check-icon">✓</span> Save favorites for the next time you’re in the area</li>
+            <li><span class="check-icon">✓</span> Claim and redeem deals from local kitchens</li>
+            <li><span class="check-icon">✓</span> Leave a review so others can decide faster</li>
           </ul>
         </div>
-        <div class="split-visual">
-          <h3>حلال</h3>
-          <p>Find Halal. Eat Well.</p>
-          <div class="stat-row">
-            <div class="stat">
-              <strong>2,000+</strong>
-              <span>Toronto spots</span>
-            </div>
-            <div class="stat">
-              <strong>Deals</strong>
-              <span>Local savings</span>
-            </div>
-            <div class="stat">
-              <strong>Community</strong>
-              <span>Trusted reports</span>
-            </div>
+        <div class="split-photo">
+          <img src="/assets/photos/platter.jpg" alt="Shared halal-style platter on a restaurant table" width="900" height="700" loading="lazy">
+          <div class="split-photo-caption">
+            <strong>2,000+</strong>
+            <span>halal restaurants in the GTA at launch</span>
           </div>
         </div>
       </div>
@@ -233,6 +252,52 @@
       </div>
     </section>
 
+    <section id="waitlist" class="waitlist-section">
+      <div class="container">
+        <div class="waitlist-card">
+          <div class="waitlist-copy">
+            <span class="section-label">Launching soon</span>
+            <h2 class="section-title">Join the waitlist</h2>
+            <p class="section-subtitle">
+              HalalMapp isn’t live yet. Leave your email and we’ll message you the day it launches in the Greater Toronto Area — no spam, just the one announcement.
+            </p>
+            <ul class="waitlist-perks">
+              <li><span class="check-icon">✓</span> First access when the app goes live</li>
+              <li><span class="check-icon">✓</span> Early launch deals from local kitchens</li>
+              <li><span class="check-icon">✓</span> One email, then nothing until launch</li>
+            </ul>
+          </div>
+
+          <form class="waitlist-form" id="waitlist-form" novalidate>
+            <label class="waitlist-label" for="waitlist-email">Email address</label>
+            <div class="waitlist-field">
+              <input
+                type="email"
+                id="waitlist-email"
+                name="email"
+                inputmode="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+                aria-describedby="waitlist-status">
+              <button type="submit" class="btn btn-primary" id="waitlist-submit">Notify me</button>
+            </div>
+
+            <!-- Bots fill hidden fields; humans never see this one. -->
+            <div class="waitlist-hp" aria-hidden="true">
+              <label for="waitlist-company">Company</label>
+              <input type="text" id="waitlist-company" name="company" tabindex="-1" autocomplete="off">
+            </div>
+
+            <p class="waitlist-status" id="waitlist-status" role="status" aria-live="polite"></p>
+            <p class="waitlist-fineprint">
+              We only use your address to announce the launch. Read our <a href="/privacy">privacy policy</a>.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <section id="download" class="cta-section">
       <div class="container">
         <span class="section-label" style="color: var(--gold-light);">Download</span>
@@ -250,7 +315,7 @@
             <span><small>Get it on</small><strong>Google Play</strong></span>
           </a>
         </div>
-        <p class="coming-soon-note">App store links will be updated as soon as HalalMapp launches in Toronto. Email us for early access.</p>
+        <p class="coming-soon-note">App store links go live the day HalalMapp launches in Toronto — <a href="#waitlist">join the waitlist</a> and we’ll tell you first.</p>
       </div>
     </section>
 
@@ -285,12 +350,14 @@
           <a href="#features">Features</a>
           <a href="#diners">For Diners</a>
           <a href="#businesses">For Businesses</a>
+          <a href="#waitlist">Join the waitlist</a>
           <a href="#download">Download</a>
         </div>
         <div class="footer-col">
           <h4>Legal</h4>
           <a href="/privacy">Privacy Policy</a>
           <a href="/terms">Terms of Service</a>
+          <a href="/business-agreement">Business Agreement</a>
           <a href="mailto:halalmapp@gmail.com">Contact</a>
         </div>
       </div>
@@ -301,6 +368,7 @@
     </div>
   </footer>
 
+  <script src="/js/config.js"></script>
   <script src="/js/main.js"></script>
 </body>
 </html>

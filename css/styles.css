@@ -203,45 +203,90 @@ a:hover {
   border-bottom: none;
 }
 
-/* ─── Header lantern garland (single centered strip under nav) ─── */
-
-.header-lanterns {
-  display: flex;
-  justify-content: center;
-  padding: 0 1rem;
-  margin-top: -1px;
-  background: transparent;
-  pointer-events: none;
-  position: relative;
-  z-index: 2;
-}
-
-.header-lanterns-art {
-  width: min(48rem, 100%);
-  height: auto;
-  max-height: 5.5rem;
-  object-fit: contain;
-  object-position: center top;
-  opacity: 0.95;
-  filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.15));
-}
-
 /* ─── Hero ─── */
 
 .hero {
   position: relative;
   overflow: hidden;
-  margin-top: -3.25rem;
-  padding: 6.5rem 0 5rem;
+  padding: 5.5rem 0 3rem;
   background: linear-gradient(160deg, var(--green-dark) 0%, #3d6b35 45%, #2d5230 100%);
   color: var(--white);
+}
+
+/* Lantern garland — sits inside the hero so it always paints on green */
+.header-lanterns {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4.75rem;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Warm ambient light spilling down from the garland */
+.header-lanterns::after {
+  content: "";
+  position: absolute;
+  top: -1.5rem;
+  left: 0;
+  right: 0;
+  height: 8rem;
+  z-index: -1;
+  background: radial-gradient(110% 100% at 50% 0%, rgba(240, 205, 120, 0.14), transparent 68%);
+}
+
+.header-lanterns-art {
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/header-lanterns.png");
+  background-repeat: repeat-x;
+  background-position: center top;
+  background-size: auto 100%;
+  opacity: 0.42;
+  filter: drop-shadow(0 0 5px rgba(245, 214, 138, 0.5)) drop-shadow(0 0 16px rgba(212, 175, 55, 0.3));
+  animation: lanternGlow 7s ease-in-out infinite;
+}
+
+@keyframes lanternGlow {
+  0%,
+  100% {
+    opacity: 0.38;
+    filter: drop-shadow(0 0 4px rgba(245, 214, 138, 0.4)) drop-shadow(0 0 14px rgba(212, 175, 55, 0.22));
+  }
+  50% {
+    opacity: 0.5;
+    filter: drop-shadow(0 0 7px rgba(245, 214, 138, 0.6)) drop-shadow(0 0 22px rgba(212, 175, 55, 0.38));
+  }
+}
+
+/* Calligraphy watermark — spans the hero so it falls behind the copy and phone */
+.hero-calligraphy {
+  position: absolute;
+  top: 2.5rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.5;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 15%, #000 65%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 15%, #000 65%, transparent 100%);
+}
+
+.hero-calligraphy-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
 }
 
 .hero-pattern {
   position: absolute;
   inset: 0;
   z-index: 0;
-  opacity: 0.12;
+  opacity: 0.08;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23D4AF37' stroke-width='0.6'%3E%3Cpolygon points='40,4 76,22 76,58 40,76 4,58 4,22'/%3E%3Cpolygon points='40,16 64,28 64,52 40,64 16,52 16,28'/%3E%3Ccircle cx='40' cy='40' r='8'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 80px 80px;
   animation: drift 60s linear infinite;
@@ -271,7 +316,7 @@ a:hover {
   border-radius: 999px;
   font-size: 0.8125rem;
   font-weight: 500;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
   backdrop-filter: blur(8px);
 }
 
@@ -285,10 +330,10 @@ a:hover {
 
 .hero-arabic {
   font-family: "Amiri", serif;
-  font-size: clamp(3rem, 8vw, 4.5rem);
+  font-size: clamp(1.25rem, 2.8vw, 1.75rem);
   font-weight: 700;
   line-height: 1;
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.25rem;
   background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -365,24 +410,132 @@ a:hover {
 }
 
 .phone-mockup {
-  width: min(100%, 300px);
-  aspect-ratio: 9 / 19;
-  background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 100%);
-  border-radius: 36px;
-  padding: 12px;
-  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  --iphone-bezel: 11px;
+  width: min(100%, 280px);
+  aspect-ratio: 9 / 19.5;
+  background:
+    linear-gradient(160deg, #3a3a3c 0%, #1c1c1e 42%, #0b0b0c 100%);
+  border-radius: 44px;
+  padding: var(--iphone-bezel);
+  box-shadow:
+    var(--shadow-lg),
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.18),
+    inset 0 0 0 3px #111113,
+    0 0 0 1px rgba(0, 0, 0, 0.45);
   position: relative;
+}
+
+.phone-mockup::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 39px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.iphone-btn {
+  position: absolute;
+  background: linear-gradient(180deg, #2c2c2e 0%, #1a1a1c 100%);
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.12);
+  z-index: 0;
+}
+
+.iphone-btn--silent {
+  left: -2.5px;
+  top: 18%;
+  width: 3px;
+  height: 4.5%;
+  border-radius: 2px 0 0 2px;
+}
+
+.iphone-btn--vol-up {
+  left: -2.5px;
+  top: 26%;
+  width: 3px;
+  height: 8%;
+  border-radius: 2px 0 0 2px;
+}
+
+.iphone-btn--vol-down {
+  left: -2.5px;
+  top: 36%;
+  width: 3px;
+  height: 8%;
+  border-radius: 2px 0 0 2px;
+}
+
+.iphone-btn--power {
+  right: -2.5px;
+  top: 28%;
+  width: 3px;
+  height: 12%;
+  border-radius: 0 2px 2px 0;
 }
 
 .phone-screen {
   width: 100%;
   height: 100%;
-  border-radius: 28px;
+  border-radius: 34px;
   overflow: hidden;
-  background: #1a1a1a;
+  background: #000;
   display: flex;
   flex-direction: column;
   position: relative;
+  isolation: isolate;
+}
+
+.iphone-island {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32%;
+  max-width: 92px;
+  height: 26px;
+  background: #0a0a0a;
+  border-radius: 20px;
+  z-index: 4;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.iphone-island::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #1a2a3a 0%, #0a1018 70%);
+  box-shadow: 0 0 0 1.5px rgba(20, 30, 40, 0.9);
+}
+
+.iphone-home-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  width: 36%;
+  max-width: 110px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* Real app screenshot inside the iPhone frame */
+.phone-screenshot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 34px;
+  display: block;
 }
 
 .phone-status-bar {
@@ -526,6 +679,7 @@ a:hover {
   font-weight: 600;
   line-height: 1.25;
   flex: 1;
+  color: var(--text);
 }
 
 .halal-badge {
@@ -632,49 +786,140 @@ section {
   margin: 0 0 3rem;
 }
 
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.feature-card {
+.features-section {
   background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.75rem;
-  box-shadow: var(--shadow);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-top: 1px solid var(--border);
 }
 
-.feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+.features-intro {
+  max-width: 34rem;
+  margin-bottom: 2.5rem;
 }
 
-.feature-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(127, 176, 105, 0.15), rgba(127, 176, 105, 0.05));
+.features-intro .section-subtitle {
+  margin-bottom: 0;
+}
+
+/* Photos on the left, feature copy alongside them */
+.features-layout {
   display: grid;
-  place-items: center;
-  font-size: 1.375rem;
-  margin-bottom: 1.25rem;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
 }
 
-.feature-card h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.0625rem;
-  font-weight: 600;
+.photo-mosaic {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  /* minmax(0, …) keeps the rows from inflating to the images' intrinsic height */
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  height: 27rem;
 }
 
-.feature-card p {
+.photo-mosaic-item {
   margin: 0;
-  font-size: 0.9375rem;
-  color: var(--text-secondary);
-  line-height: 1.55;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #1a1f1a;
 }
+
+.photo-mosaic-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.photo-mosaic-item:hover img {
+  transform: scale(1.03);
+}
+
+.photo-mosaic-item--tall {
+  grid-row: 1 / span 2;
+}
+
+.photo-mosaic-item--wide {
+  grid-column: 2 / span 2;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-list li {
+  padding: 0.875rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.feature-list li:first-child {
+  padding-top: 0;
+}
+
+.feature-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.feature-list h3 {
+  margin: 0 0 0.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.feature-list p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.split-photo {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 20rem;
+  background: #1a1f1a;
+}
+
+.split-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.split-photo-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(transparent, rgba(26, 31, 26, 0.85));
+  color: var(--white);
+}
+
+.split-photo-caption strong {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.split-photo-caption span {
+  font-size: 0.875rem;
+  opacity: 0.85;
+}
+
+/* legacy feature cards kept unused; split-visual still used by businesses */
 
 /* ─── Split sections ─── */
 
@@ -755,6 +1000,123 @@ section {
 .stat span {
   font-size: 0.8125rem;
   opacity: 0.8;
+}
+
+/* ─── Launch waitlist ─── */
+
+.waitlist-section {
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+}
+
+.waitlist-card {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 2.75rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+
+.waitlist-copy .section-subtitle {
+  margin-bottom: 1.5rem;
+}
+
+.waitlist-perks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.waitlist-perks li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.375rem 0;
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+}
+
+.waitlist-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.waitlist-field {
+  display: flex;
+  gap: 0.625rem;
+}
+
+.waitlist-field input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.8125rem 1rem;
+  font: inherit;
+  font-size: 0.9375rem;
+  color: var(--text);
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.waitlist-field input::placeholder {
+  color: #9aa39a;
+}
+
+.waitlist-field input:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(127, 176, 105, 0.2);
+}
+
+.waitlist-field input:disabled {
+  opacity: 0.6;
+}
+
+.waitlist-field .btn {
+  white-space: nowrap;
+}
+
+.waitlist-field .btn:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+/* Honeypot: off-screen rather than display:none so bots still fill it */
+.waitlist-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.waitlist-status {
+  margin: 0.875rem 0 0;
+  font-size: 0.875rem;
+  min-height: 1.25rem;
+}
+
+.waitlist-status.is-success {
+  color: var(--green-dark);
+  font-weight: 500;
+}
+
+.waitlist-status.is-error {
+  color: #b3261e;
+}
+
+.waitlist-fineprint {
+  margin: 0.5rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
 }
 
 /* ─── Download CTA ─── */
@@ -1027,16 +1389,63 @@ section {
     grid-template-columns: 1fr;
   }
 
-  .features-grid {
+  .features-layout {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .waitlist-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.75rem;
+  }
+
+  .waitlist-field {
+    flex-direction: column;
+  }
+
+  .waitlist-field .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .photo-mosaic {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    height: 20rem;
+  }
+
+  .photo-mosaic-item--tall {
+    grid-row: 1 / span 2;
+    grid-column: 1;
+  }
+
+  .photo-mosaic-item--wide {
+    grid-column: 2;
+  }
+
+  /* The fourth photo would crowd the two-column layout on small screens */
+  .photo-mosaic-item:nth-child(3) {
+    display: none;
   }
 
   .hero-visual {
-    order: -1;
+    order: 1;
   }
 
   .phone-mockup {
-    width: 240px;
+    width: 220px;
+    border-radius: 38px;
+  }
+
+  .phone-screen,
+  .phone-screenshot {
+    border-radius: 29px;
+  }
+
+  .iphone-island {
+    height: 22px;
+    top: 8px;
   }
 
   .nav-desktop {
@@ -1048,12 +1457,18 @@ section {
   }
 
   .hero {
-    margin-top: -2.5rem;
-    padding: 5rem 0 4rem;
+    padding: 4.25rem 0 2.25rem;
   }
 
-  .header-lanterns-art {
-    max-height: 3.75rem;
+  .header-lanterns {
+    height: 3.5rem;
+  }
+
+  .hero-calligraphy {
+    top: 3rem;
+    bottom: auto;
+    height: 18rem;
+    opacity: 0.4;
   }
 
   section {
@@ -1073,5 +1488,12 @@ section {
   .stat-row {
     flex-direction: column;
     gap: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-lanterns-art,
+  .hero-pattern {
+    animation: none;
   }
 }
