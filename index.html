@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="HalalMapp helps you find halal restaurants near you. Discover, review, save favorites, and unlock exclusive deals from local businesses.">
-  <meta name="theme-color" content="#5C8A4D">
+  <meta name="theme-color" content="#2F6B4F">
   <title>HalalMapp — Find Halal. Eat Well.</title>
   <link rel="icon" href="/assets/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/favicon.png" type="image/png" sizes="32x32">
@@ -12,14 +12,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("halalmapp.theme");
+        var dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme = dark ? "dark" : "light";
+      } catch (_) {}
+    })();
+  </script>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="logo">
-        <span class="logo-mark" aria-hidden="true">ح</span>
-        HalalMapp
+        <img class="logo-image" src="/assets/halalmapp-logo-official.png" alt="" width="40" height="48">
+        <span>HalalMapp</span>
       </a>
       <nav class="nav-desktop" aria-label="Main">
         <a href="#features">Features</a>
@@ -31,6 +40,14 @@
           <a href="#waitlist" class="nav-cta">Join the waitlist</a>
         </div>
       </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch color theme">
+        <svg class="theme-icon theme-icon--sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="theme-icon theme-icon--moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
       <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
@@ -49,6 +66,7 @@
 
   <main>
     <section class="hero">
+      <div class="hero-map-backdrop" aria-hidden="true"></div>
       <div class="hero-pattern" aria-hidden="true"></div>
       <div class="header-lanterns" aria-hidden="true">
         <div class="header-lanterns-art"></div>
@@ -342,8 +360,8 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="/" class="logo">
-            <span class="logo-mark" aria-hidden="true">ح</span>
-            HalalMapp
+            <img class="logo-image" src="/assets/halalmapp-logo-official.png" alt="" width="40" height="48" loading="lazy">
+            <span>HalalMapp</span>
           </a>
           <p>Find halal restaurants near you. Discover, review, save favorites, and unlock deals from local businesses.</p>
         </div>

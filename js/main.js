@@ -1,4 +1,53 @@
 (function () {
+  const root = document.documentElement;
+  const toggle = document.querySelector(".theme-toggle");
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+  const storageKey = "halalmapp.theme";
+
+  function storedTheme() {
+    try {
+      return localStorage.getItem(storageKey);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function applyTheme(theme, persist) {
+    const dark = theme === "dark";
+    root.dataset.theme = dark ? "dark" : "light";
+    if (toggle) {
+      toggle.setAttribute(
+        "aria-label",
+        dark ? "Switch to light mode" : "Switch to dark mode",
+      );
+    }
+    if (themeMeta) {
+      themeMeta.setAttribute("content", dark ? "#0A1628" : "#2F6B4F");
+    }
+    if (persist) {
+      try {
+        localStorage.setItem(storageKey, dark ? "dark" : "light");
+      } catch (_) {
+        /* Theme still applies when storage is unavailable. */
+      }
+    }
+  }
+
+  applyTheme(root.dataset.theme || (systemTheme.matches ? "dark" : "light"), false);
+
+  if (toggle) {
+    toggle.addEventListener("click", function () {
+      applyTheme(root.dataset.theme === "dark" ? "light" : "dark", true);
+    });
+  }
+
+  systemTheme.addEventListener("change", function (event) {
+    if (!storedTheme()) applyTheme(event.matches ? "dark" : "light", false);
+  });
+})();
+
+(function () {
   const toggle = document.querySelector(".menu-toggle");
   const mobileNav = document.querySelector(".nav-mobile");
   if (!toggle || !mobileNav) return;

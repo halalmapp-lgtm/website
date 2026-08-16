@@ -1,21 +1,43 @@
 /* HalalMapp marketing site — matches app design system */
 :root {
-  --green: #7fb069;
-  --green-dark: #5c8a4d;
-  --green-light: #9dc183;
-  --gold: #d4af37;
-  --gold-light: #e6c65c;
-  --cream: #f5f5f4;
+  color-scheme: light;
+  --green: #2f6b4f;
+  --green-dark: #1f4f3a;
+  --green-light: #4a8f6e;
+  --gold: #c9a227;
+  --gold-light: #ddbf4a;
+  --on-gold: #0f1c2e;
+  --cream: #f6f7f9;
   --white: #ffffff;
-  --text: #2d2d2d;
-  --text-secondary: #5c5c5c;
-  --text-light: #8a8a8a;
-  --border: #e8e8e5;
-  --shadow: 0 4px 24px rgba(45, 45, 45, 0.08);
-  --shadow-lg: 0 16px 48px rgba(45, 45, 45, 0.12);
+  --surface: #ffffff;
+  --surface-muted: #eef1f5;
+  --text: #0f1c2e;
+  --text-secondary: #4a5568;
+  --text-light: #7a8699;
+  --border: #e2e6ec;
+  --header-bg: rgba(255, 255, 255, 0.9);
+  --shadow: 0 4px 24px rgba(11, 31, 58, 0.08);
+  --shadow-lg: 0 16px 48px rgba(11, 31, 58, 0.12);
   --radius: 16px;
   --radius-sm: 12px;
   --max-width: 1120px;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --green: #4a8f6e;
+  --green-dark: #2f6b4f;
+  --green-light: #6ca889;
+  --cream: #0a1628;
+  --surface: #122033;
+  --surface-muted: #1a2b42;
+  --text: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-light: rgba(255, 255, 255, 0.54);
+  --border: #2a3f5c;
+  --header-bg: rgba(18, 32, 51, 0.9);
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.22);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.34);
 }
 
 *,
@@ -64,7 +86,7 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--header-bg);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
 }
@@ -87,22 +109,58 @@ a:hover {
   letter-spacing: 0.02em;
 }
 
+.logo-image {
+  width: 34px;
+  height: 42px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 2px 6px rgba(31, 79, 58, 0.22));
+}
+
 .logo:hover {
   color: var(--text);
 }
 
 .logo-mark {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--green), var(--green-dark));
+  width: 34px;
+  height: 42px;
+  flex: 0 0 auto;
+  display: block;
+  overflow: hidden;
+  color: transparent;
+  font-size: 0;
+  background: url("/assets/halalmapp-logo-official.png") center / contain no-repeat;
+  filter: drop-shadow(0 2px 6px rgba(31, 79, 58, 0.22));
+}
+
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
   display: grid;
   place-items: center;
-  color: var(--white);
-  font-family: "Amiri", serif;
-  font-size: 1.125rem;
-  font-weight: 700;
-  box-shadow: 0 2px 8px rgba(92, 138, 77, 0.35);
+  padding: 0;
+  color: var(--text-secondary);
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--gold);
+  transform: translateY(-1px);
+}
+
+.theme-icon--sun,
+[data-theme="dark"] .theme-icon--moon {
+  display: none;
+}
+
+[data-theme="dark"] .theme-icon--sun {
+  display: block;
 }
 
 .nav-desktop {
@@ -209,8 +267,41 @@ a:hover {
   position: relative;
   overflow: hidden;
   padding: 5.5rem 0 3rem;
-  background: linear-gradient(160deg, var(--green-dark) 0%, #3d6b35 45%, #2d5230 100%);
+  background: linear-gradient(160deg, #2f6b4f 0%, #1f4f3a 48%, #143b2c 100%);
   color: var(--white);
+}
+
+.hero-map-backdrop {
+  position: absolute;
+  inset: -8%;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("/assets/app-screenshot.png");
+  background-size: cover;
+  background-position: center 42%;
+  opacity: 0.11;
+  filter: grayscale(1) contrast(1.2) saturate(0.25);
+  mix-blend-mode: soft-light;
+  transform: scale(1.04) rotate(-1deg);
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 18%,
+    #000 82%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 18%,
+    #000 82%,
+    transparent 100%
+  );
+}
+
+[data-theme="dark"] .hero-map-backdrop {
+  opacity: 0.14;
+  mix-blend-mode: luminosity;
 }
 
 /* Lantern garland — sits inside the hero so it always paints on green */
@@ -383,13 +474,13 @@ a:hover {
 
 .btn-primary {
   background: var(--gold);
-  color: var(--text);
+  color: var(--on-gold);
   box-shadow: 0 4px 16px rgba(212, 175, 55, 0.45);
 }
 
 .btn-primary:hover {
   box-shadow: 0 6px 24px rgba(212, 175, 55, 0.55);
-  color: var(--text);
+  color: var(--on-gold);
 }
 
 .btn-ghost {
@@ -787,7 +878,7 @@ section {
 }
 
 .features-section {
-  background: var(--white);
+  background: var(--surface);
   border-top: 1px solid var(--border);
 }
 
@@ -924,7 +1015,7 @@ section {
 /* ─── Split sections ─── */
 
 .split-section {
-  background: var(--white);
+  background: var(--surface);
 }
 
 .split-grid {
@@ -1015,7 +1106,7 @@ section {
   gap: 3rem;
   align-items: center;
   padding: 2.75rem;
-  background: var(--white);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
@@ -1060,7 +1151,7 @@ section {
   font: inherit;
   font-size: 0.9375rem;
   color: var(--text);
-  background: var(--white);
+  background: var(--surface-muted);
   border: 1.5px solid var(--border);
   border-radius: var(--radius-sm);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -1190,7 +1281,7 @@ section {
 }
 
 .contact-card {
-  background: var(--white);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 2rem;
@@ -1220,7 +1311,7 @@ section {
 /* ─── Legal pages ─── */
 
 .legal-hero {
-  background: var(--white);
+  background: var(--surface);
   border-bottom: 1px solid var(--border);
   padding: 3rem 0 2.5rem;
 }
@@ -1237,7 +1328,7 @@ section {
 }
 
 .legal-content {
-  background: var(--white);
+  background: var(--surface);
   padding: 3rem 0 5rem;
 }
 
@@ -1284,7 +1375,7 @@ section {
 .status-card {
   text-align: center;
   max-width: 28rem;
-  background: var(--white);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 3rem 2rem;
