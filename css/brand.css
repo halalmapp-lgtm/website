@@ -145,11 +145,27 @@ main,
   position: absolute;
   inset: 0;
   background-image: url("/assets/map-bg-plate.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.38;
+  background-size: auto 100%;
+  background-position: center 40%;
+  background-repeat: repeat-x;
+  opacity: 0.5;
   filter: saturate(0.85) contrast(1.04) brightness(1.12);
+}
+
+.hero .bg-map::before {
+  /* Cover was cropping to a few downtown blocks. Size by height so the full
+     GTA plate stays in frame; repeat fills the wide hero. */
+  background-size: auto 108%;
+  background-position: center 36%;
+  opacity: 0.52;
+}
+
+.hero .motif-lattice {
+  opacity: 0.12;
+}
+
+.hero .bg-map::after {
+  background-color: rgba(10, 22, 40, 0.22);
 }
 
 .bg-map::after {
