@@ -29,14 +29,14 @@
   --green: #4a8f6e;
   --green-dark: #2f6b4f;
   --green-light: #6ca889;
-  --cream: #0f2419;
-  --surface: #163023;
-  --surface-muted: #1e3d2c;
+  --cream: #0a1628;
+  --surface: #122033;
+  --surface-muted: #1a2b42;
   --text: #f6f7f9;
-  --text-secondary: #b7c9bc;
-  --text-light: #7f9a88;
-  --border: #2f5640;
-  --header-bg: rgba(15, 36, 25, 0.9);
+  --text-secondary: #a8b4c4;
+  --text-light: #7a8699;
+  --border: #2a3f5c;
+  --header-bg: rgba(10, 22, 40, 0.9);
   --shadow: 0 4px 24px rgba(0, 0, 0, 0.22);
   --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.34);
 }
@@ -269,7 +269,7 @@ a:hover {
   position: relative;
   overflow: hidden;
   padding: 5.5rem 0 3.5rem;
-  background: #0f2419;
+  background: linear-gradient(160deg, #0f2419 0%, #12302c 38%, #0a1628 100%);
   color: var(--white);
 }
 
@@ -789,6 +789,12 @@ section {
   background: var(--surface);
   border-top: 1px solid var(--border);
   position: relative;
+  overflow: hidden;
+}
+
+.features-section .container {
+  position: relative;
+  z-index: 2;
 }
 
 .features-intro {
@@ -798,6 +804,10 @@ section {
 
 .features-intro .section-subtitle {
   margin-bottom: 0;
+}
+
+.features-intro .chip-row {
+  margin-top: 1.25rem;
 }
 
 /* Photos on the left, feature copy alongside them */
@@ -925,6 +935,19 @@ section {
 
 .split-section {
   background: var(--surface);
+  position: relative;
+  overflow: hidden;
+}
+
+#businesses {
+  position: relative;
+  overflow: hidden;
+}
+
+#businesses .container,
+.split-section .container {
+  position: relative;
+  z-index: 2;
 }
 
 .split-grid {
@@ -1011,6 +1034,44 @@ section {
   border-top: 1px solid var(--border);
 }
 
+.waitlist-section.band-navy {
+  position: relative;
+  overflow: hidden;
+  background: #0a1628;
+  color: #f6f7f9;
+  border-top: 1px solid rgba(42, 63, 92, 0.8);
+}
+
+.waitlist-section.band-navy .section-label,
+.waitlist-section.band-navy .section-title,
+.waitlist-section.band-navy .waitlist-label {
+  color: #f6f7f9;
+}
+
+.waitlist-section.band-navy .section-subtitle,
+.waitlist-section.band-navy .waitlist-perks li,
+.waitlist-section.band-navy .waitlist-fineprint {
+  color: #a8b4c4;
+}
+
+.waitlist-section.band-navy .waitlist-fineprint a {
+  color: var(--gold-light);
+}
+
+.waitlist-section.band-navy .waitlist-status.is-success {
+  color: #7fe0ae;
+}
+
+.waitlist-section.band-navy .container {
+  position: relative;
+  z-index: 2;
+}
+
+.waitlist-section.band-navy .waitlist-card {
+  background: rgba(18, 32, 51, 0.92);
+  border: 1px solid rgba(201, 162, 39, 0.32);
+}
+
 .waitlist-card {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -1021,6 +1082,7 @@ section {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
+  position: relative;
 }
 
 .waitlist-copy .section-subtitle {
@@ -1124,9 +1186,20 @@ section {
 /* ─── Restaurant partner page ─── */
 
 .partner-hero {
+  --motif: #1f4f3a;
+  position: relative;
+  overflow: hidden;
   padding: 4.5rem 0 3.5rem;
-  background: var(--surface);
+  background: var(--cream);
   border-bottom: 1px solid var(--border);
+}
+
+.partner-hero h1 {
+  margin: 0.75rem 0 1rem;
+  font-size: clamp(2rem, 5vw, 3.15rem);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.03em;
 }
 
 .partner-hero-grid {
@@ -1136,13 +1209,6 @@ section {
   align-items: center;
 }
 
-.partner-hero h1 {
-  margin: 0.75rem 0 1rem;
-  font-size: clamp(2rem, 5vw, 3.15rem);
-  line-height: 1.15;
-  font-weight: 700;
-}
-
 .partner-tagline {
   color: var(--text-secondary);
   font-size: 1.0625rem;
@@ -1150,8 +1216,9 @@ section {
 }
 
 .partner-badge {
-  background: var(--surface-muted);
-  color: var(--text);
+  background: rgba(201, 162, 39, 0.16);
+  border-color: rgba(168, 134, 28, 0.5);
+  color: #8a6d12;
 }
 
 .partner-hero-card {
@@ -1371,14 +1438,24 @@ section {
 /* ─── Download CTA ─── */
 
 .cta-section {
-  background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+  --motif: #c9a227;
+  position: relative;
+  overflow: hidden;
+  background: #0d3b2a;
   color: var(--white);
   text-align: center;
   padding: 4.5rem 0;
 }
 
-.cta-section .section-title {
-  color: var(--white);
+.cta-section .container,
+.site-footer .container,
+.partner-hero-grid {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-section .accent {
+  color: var(--gold-light);
 }
 
 .cta-section .section-subtitle {
@@ -1401,7 +1478,7 @@ section {
   padding: 0.75rem 1.5rem;
   background: rgba(0, 0, 0, 0.25);
   border: 1.5px solid rgba(255, 255, 255, 0.3);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-pill);
   color: var(--white);
   font-weight: 500;
   transition: background 0.2s ease, transform 0.2s ease;
@@ -1428,6 +1505,12 @@ section {
   margin-top: 1.25rem;
   font-size: 0.875rem;
   opacity: 0.75;
+}
+
+.coming-soon-note a {
+  color: var(--gold-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* ─── Contact ─── */
@@ -1469,7 +1552,7 @@ section {
 /* ─── Legal pages ─── */
 
 .legal-hero {
-  background: var(--surface);
+  background: var(--cream);
   border-bottom: 1px solid var(--border);
   padding: 3rem 0 2.5rem;
 }
@@ -1574,7 +1657,10 @@ section {
 /* ─── Footer ─── */
 
 .site-footer {
-  background: #1a1f1a;
+  --motif: #c9a227;
+  position: relative;
+  overflow: hidden;
+  background: #0a1628;
   color: rgba(255, 255, 255, 0.7);
   padding: 3.5rem 0 2rem;
 }
@@ -1712,17 +1798,6 @@ section {
     padding: 4.25rem 0 2.25rem;
   }
 
-  .header-lanterns {
-    height: 3.5rem;
-  }
-
-  .hero-calligraphy {
-    top: 3rem;
-    bottom: auto;
-    height: 18rem;
-    opacity: 0.4;
-  }
-
   section {
     padding: 3.5rem 0;
   }
@@ -1744,8 +1819,7 @@ section {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .header-lanterns-art,
-  .hero-pattern {
-    animation: none;
+  html {
+    scroll-behavior: auto;
   }
 }

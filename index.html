@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script>
     (function () {
       try {
@@ -22,13 +22,14 @@
     })();
   </script>
   <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/brand.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="logo">
         <img class="logo-image" src="/assets/halalmapp-logo-official.png" alt="" width="40" height="48">
-        <span>HalalMapp</span>
+        <span>Halal<span class="logo-accent">Mapp</span></span>
       </a>
       <nav class="nav-desktop" aria-label="Main">
         <a href="#features">Features</a>
@@ -66,66 +67,35 @@
 
   <main>
     <section class="hero">
-      <div class="hero-map-backdrop" aria-hidden="true"></div>
-      <div class="hero-pattern" aria-hidden="true"></div>
-      <div class="header-lanterns" aria-hidden="true">
-        <div class="header-lanterns-art"></div>
+      <div class="bg-map" aria-hidden="true"></div>
+      <div class="motif-lattice strong" aria-hidden="true"><i></i></div>
+      <div class="glow-warm" aria-hidden="true"></div>
+      <div class="deal-scatter" aria-hidden="true">
+        <span class="pct-tag outline hide-mobile" style="top:12%;right:6%;font-size:4.5rem;transform:rotate(-9deg)">-30%</span>
+        <span class="pct-tag faint" style="top:58%;left:3%;font-size:2.2rem;transform:rotate(-12deg)">-20%</span>
+        <span class="pct-tag hide-mobile" style="bottom:14%;right:8%;font-size:2.8rem;transform:rotate(8deg)">BOGO</span>
+        <div class="mini-coupon gold hide-mobile" style="top:22%;right:4%;width:168px;height:50px;transform:rotate(-8deg)">
+          <div class="mc-label">-15% OFF</div>
+          <div class="mc-stub">%</div>
+        </div>
+        <div class="mini-coupon green" style="bottom:18%;left:2%;width:156px;height:48px;transform:rotate(11deg)">
+          <div class="mc-label">$5 OFF</div>
+          <div class="mc-stub">$</div>
+        </div>
       </div>
-      <div class="hero-calligraphy" aria-hidden="true">
-        <svg class="hero-calligraphy-art" viewBox="0 0 1400 460" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" focusable="false">
-          <defs>
-            <linearGradient id="calliGold" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#E6C65C" stop-opacity="0.55"/>
-              <stop offset="55%" stop-color="#D4AF37" stop-opacity="0.3"/>
-              <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
-            </linearGradient>
-            <g id="calliFlourish" fill="none" stroke="url(#calliGold)" stroke-width="2" stroke-linecap="round">
-              <path d="M20 196c70-52 132 26 196-14 64-40 118 18 176-16 58-34 108 22 168-8"/>
-              <path d="M44 250c66-40 120 24 182-8 62-32 112 20 170-8 58-28 104 18 156-6"/>
-              <path d="M110 300c58-30 106 18 160-6 54-24 98 14 146-4"/>
-              <path d="M150 182c-6-26 10-48 34-52-2 28-14 44-34 52z" fill="url(#calliGold)" stroke="none"/>
-              <path d="M300 216c-2-26 16-46 40-46-6 26-18 42-40 46z" fill="url(#calliGold)" stroke="none"/>
-              <path d="M470 172c-8-24 6-48 30-54 0 28-10 46-30 54z" fill="url(#calliGold)" stroke="none"/>
-              <path d="M236 268c-4-24 12-44 34-46-4 26-14 40-34 46z" fill="url(#calliGold)" stroke="none"/>
-              <circle cx="86" cy="214" r="5" fill="url(#calliGold)" stroke="none"/>
-              <circle cx="236" cy="188" r="4" fill="url(#calliGold)" stroke="none"/>
-              <circle cx="392" cy="198" r="5" fill="url(#calliGold)" stroke="none"/>
-              <circle cx="548" cy="176" r="4" fill="url(#calliGold)" stroke="none"/>
-            </g>
-            <g id="calliRosette" fill="none" stroke="url(#calliGold)" stroke-width="1.5">
-              <polygon points="0,-30 8,-9 30,0 8,9 0,30 -8,9 -30,0 -8,-9"/>
-              <circle r="11"/>
-              <circle r="21"/>
-            </g>
-          </defs>
-
-          <use href="#calliFlourish"/>
-          <use href="#calliFlourish" transform="translate(1400,0) scale(-1,1)"/>
-
-          <g fill="none" stroke="url(#calliGold)" stroke-width="1.5">
-            <circle cx="700" cy="196" r="152"/>
-            <circle cx="700" cy="196" r="126"/>
-            <polygon points="840,196 799,97 700,56 601,97 560,196 601,295 700,336 799,295"/>
-            <polygon points="700,44 852,196 700,348 548,196"/>
-          </g>
-
-          <g font-family="Amiri, 'Noto Naskh Arabic', serif" font-weight="700" fill="url(#calliGold)" text-anchor="middle" direction="rtl">
-            <text x="700" y="238" font-size="150">حلال</text>
-            <text x="700" y="300" font-size="42" letter-spacing="6">طيّب ومبارك</text>
-          </g>
-
-          <use href="#calliRosette" transform="translate(240,120)"/>
-          <use href="#calliRosette" transform="translate(1160,120)"/>
-        </svg>
-      </div>
+      <div class="lantern glow hang hero-lantern--lg" aria-hidden="true" style="top:3.5rem;right:11%;width:5.5rem;height:9.5rem;opacity:.88"></div>
+      <div class="lantern alt glow hang" aria-hidden="true" style="top:-0.4rem;right:3.5%;width:4.25rem;height:7.25rem;opacity:.58"></div>
+      <div class="lantern hang" aria-hidden="true" style="top:1rem;left:2.5%;width:3.4rem;height:5.8rem;opacity:.28"></div>
+      <div class="crescent" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-content">
+          <div class="eyebrow">Halal discovery</div>
           <div class="hero-badge">
             <span class="hero-badge-dot"></span>
             Coming soon to Toronto · 2,000+ restaurants
           </div>
           <p class="hero-arabic" aria-hidden="true">حلال</p>
-          <h1>Find halal restaurants near you</h1>
+          <h1>Find halal.<br><span class="accent">Eat well.</span></h1>
           <p class="hero-tagline">
             HalalMapp is launching in the Greater Toronto Area with over 2,000 halal restaurants — discover trusted spots on the map, read community reviews, save favorites, and unlock exclusive deals.
           </p>
@@ -134,8 +104,15 @@
             <a href="#download" class="btn btn-ghost">Download the app</a>
             <a href="/restaurants" class="btn btn-ghost">List your restaurant</a>
           </div>
+          <div class="chip-row">
+            <span class="chip">Map</span>
+            <span class="chip gold">Clearer sources</span>
+            <span class="chip">Local picks</span>
+          </div>
         </div>
         <div class="hero-visual">
+          <div class="device-halo" aria-hidden="true"></div>
+          <div class="halo-ring" aria-hidden="true"></div>
           <div class="phone-mockup" aria-hidden="false">
             <div class="iphone-btn iphone-btn--silent" aria-hidden="true"></div>
             <div class="iphone-btn iphone-btn--vol-up" aria-hidden="true"></div>
@@ -158,13 +135,19 @@
     </section>
 
     <section id="features" class="features-section">
+      <div class="motif-lattice ink even" aria-hidden="true"><i></i></div>
       <div class="container">
         <div class="features-intro">
           <span class="section-label">On the map</span>
-          <h2 class="section-title">Halal spots, found nearby</h2>
+          <h2 class="section-title">Halal spots, <span class="accent">found nearby</span></h2>
           <p class="section-subtitle">
             Browse Toronto’s growing list of halal restaurants on a live map — then open a place for reviews, community reports, and deals.
           </p>
+          <div class="chip-row">
+            <span class="chip ink">Map discovery</span>
+            <span class="chip ink gold">Halal clarity</span>
+            <span class="chip ink">Deals</span>
+          </div>
         </div>
 
         <div class="features-layout">
@@ -210,10 +193,11 @@
     </section>
 
     <section id="diners" class="split-section">
+      <div class="motif-lattice ink even" aria-hidden="true"><i></i></div>
       <div class="container split-grid">
         <div class="split-content">
           <span class="section-label">For diners</span>
-          <h2 class="section-title">Tonight’s dinner, sorted</h2>
+          <h2 class="section-title">Tonight’s dinner, <span class="accent">sorted</span></h2>
           <p class="section-subtitle" style="margin-bottom: 0;">
             Open the map, check what’s nearby, and walk in knowing the community has weighed in on the place.
           </p>
@@ -236,6 +220,7 @@
     </section>
 
     <section id="businesses">
+      <div class="motif-lattice ink even" aria-hidden="true"><i></i></div>
       <div class="container split-grid">
         <div class="split-visual">
           <h3>Grow your reach</h3>
@@ -257,7 +242,7 @@
         </div>
         <div class="split-content">
           <span class="section-label">For businesses</span>
-          <h2 class="section-title">Reach halal-conscious customers</h2>
+          <h2 class="section-title">Reach <span class="accent">halal-conscious</span> customers</h2>
           <p class="section-subtitle" style="margin-bottom: 0;">
             HalalMapp helps halal restaurants and food businesses get discovered by the right audience and drive foot traffic with targeted offers.
           </p>
@@ -275,12 +260,31 @@
       </div>
     </section>
 
-    <section id="waitlist" class="waitlist-section">
+    <section id="waitlist" class="waitlist-section band-navy">
+      <div class="motif-lattice navy strong" aria-hidden="true"><i></i></div>
+      <div class="deal-scatter" aria-hidden="true">
+        <span class="pct-tag outline hide-mobile" style="top:8%;left:4%;font-size:3.4rem;transform:rotate(-10deg)">-30%</span>
+        <span class="pct-tag faint" style="top:12%;right:5%;font-size:2rem;transform:rotate(8deg)">-15%</span>
+        <span class="pct-tag" style="bottom:10%;left:6%;font-size:2.4rem;transform:rotate(7deg)">-20%</span>
+        <span class="pct-tag outline hide-mobile" style="bottom:12%;right:4%;font-size:3rem;transform:rotate(-8deg)">BOGO</span>
+        <div class="mini-coupon gold" style="top:18%;right:7%;width:172px;height:52px;transform:rotate(-7deg)">
+          <div class="mc-label">-15% OFF</div>
+          <div class="mc-stub">%</div>
+        </div>
+        <div class="mini-coupon hide-mobile" style="bottom:16%;left:3%;width:160px;height:48px;transform:rotate(12deg)">
+          <div class="mc-label">BOGO</div>
+          <div class="mc-stub">1+1</div>
+        </div>
+        <div class="mini-coupon gold hide-mobile" style="top:62%;right:2%;width:168px;height:50px;transform:rotate(9deg)">
+          <div class="mc-label">$5 OFF</div>
+          <div class="mc-stub">$</div>
+        </div>
+      </div>
       <div class="container">
         <div class="waitlist-card">
           <div class="waitlist-copy">
             <span class="section-label">Launching soon</span>
-            <h2 class="section-title">Join the waitlist</h2>
+            <h2 class="section-title">Join the <span class="accent">waitlist</span></h2>
             <p class="section-subtitle">
               HalalMapp isn’t live yet. Leave your email and we’ll message you the day it launches in the Greater Toronto Area — no spam, just the one announcement.
             </p>
@@ -322,9 +326,23 @@
     </section>
 
     <section id="download" class="cta-section">
+      <div class="motif-lattice strong" aria-hidden="true"><i></i></div>
+      <div class="glow-warm" aria-hidden="true"></div>
+      <div class="deal-scatter" aria-hidden="true">
+        <div class="mini-coupon gold hide-mobile" style="top:22%;left:5%;width:164px;height:48px;transform:rotate(-9deg)">
+          <div class="mc-label">FREE SIDE</div>
+          <div class="mc-stub">★</div>
+        </div>
+        <div class="mini-coupon hide-mobile" style="bottom:20%;right:6%;width:160px;height:48px;transform:rotate(8deg)">
+          <div class="mc-label">-10% OFF</div>
+          <div class="mc-stub">%</div>
+        </div>
+      </div>
+      <div class="lantern glow hang" aria-hidden="true" style="top:1.25rem;right:8%;width:4.5rem;height:7.6rem;opacity:.55"></div>
+      <div class="lantern alt hang" aria-hidden="true" style="top:-0.5rem;left:6%;width:3.4rem;height:5.8rem;opacity:.28"></div>
       <div class="container">
         <span class="section-label" style="color: var(--gold-light);">Download</span>
-        <h2 class="section-title">Get HalalMapp today</h2>
+        <h2 class="section-title">Get HalalMapp <span class="accent">today</span></h2>
         <p class="section-subtitle">
           Launching soon in the Greater Toronto Area with 2,000+ halal restaurants. Available on iOS and Android — web app coming for desktop users.
         </p>
@@ -363,12 +381,13 @@
   </main>
 
   <footer class="site-footer">
+    <div class="motif-lattice navy even" aria-hidden="true"><i></i></div>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="/" class="logo">
             <img class="logo-image" src="/assets/halalmapp-logo-official.png" alt="" width="40" height="48" loading="lazy">
-            <span>HalalMapp</span>
+            <span>Halal<span class="logo-accent">Mapp</span></span>
           </a>
           <p>Find halal restaurants near you. Discover, review, save favorites, and unlock deals from local businesses.</p>
         </div>

@@ -1,0 +1,443 @@
+/* HalalMapp marketing — Instagram launch look
+   Ports the 9-post system: Khatim lattice, map plate, fanoos lanterns,
+   forest / cream / emerald palettes, gold wordmark, pill chips.
+   Load AFTER styles.css.
+*/
+
+:root {
+  --navy: #0a1628;
+  --navy-mid: #122033;
+  --navy-card: #1a2b42;
+  --motif: #1f4f3a;
+  --pop: #a8861c;
+  --font-display: "Amiri", Georgia, serif;
+}
+
+[data-theme="dark"] {
+  --motif: #c9a227;
+  --pop: #ddbf4a;
+}
+
+/* Site-wide Khatim lattice — tiled SVG, same 8-point star as the feed */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.2;
+  background-image: url("/assets/khatim-ink.svg");
+  background-repeat: repeat;
+  background-size: 150px 150px;
+}
+
+[data-theme="dark"] body::before {
+  background-image: url("/assets/khatim-gold.svg");
+  opacity: 0.16;
+}
+
+.site-header,
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.site-header {
+  z-index: 100;
+}
+
+.logo-accent {
+  color: var(--gold);
+}
+
+/* Gold rule + uppercase label — same as IG eyebrow */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.85rem;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: 2px;
+  background: var(--gold);
+}
+
+.hero .eyebrow {
+  color: var(--gold-light);
+}
+
+.hero .eyebrow::before {
+  background: var(--gold-light);
+}
+
+.headline-accent,
+.hero h1 .accent,
+.partner-hero h1 .accent,
+.section-title .accent {
+  color: var(--gold);
+}
+
+.hero h1 .accent {
+  color: var(--gold-light);
+}
+
+/* ─── Khatim lattice overlay (hero / CTA / footer) ─── */
+
+.motif-lattice {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.24;
+  pointer-events: none;
+}
+
+.motif-lattice > i {
+  position: absolute;
+  inset: 0;
+  display: block;
+  background-image: url("/assets/khatim-gold.svg");
+  background-repeat: repeat;
+  background-size: 150px 150px;
+}
+
+.motif-lattice.ink > i {
+  background-image: url("/assets/khatim-ink.svg");
+}
+
+.motif-lattice.navy > i {
+  background-image: url("/assets/khatim-navy.svg");
+}
+
+.motif-lattice.strong {
+  opacity: 0.34;
+}
+
+.motif-lattice.soft {
+  opacity: 0.16;
+}
+
+.motif-lattice.even {
+  opacity: 0.2;
+}
+
+/* ─── Map plate + grid overlay (feed posts 1 & 4) ─── */
+
+.bg-map {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background-color: #0a1628;
+}
+
+.bg-map::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/assets/map-bg-plate.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.38;
+  filter: saturate(0.85) contrast(1.04) brightness(1.12);
+}
+
+.bg-map::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(10, 22, 40, 0.38);
+  background-image:
+    linear-gradient(rgba(47, 107, 79, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 107, 79, 0.18) 1px, transparent 1px),
+    radial-gradient(ellipse 80% 60% at 70% 30%, rgba(74, 143, 110, 0.16), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 20% 80%, rgba(201, 162, 39, 0.08), transparent 50%),
+    linear-gradient(160deg, transparent 45%, rgba(15, 36, 25, 0.24) 100%),
+    repeating-linear-gradient(
+      -18deg,
+      transparent,
+      transparent 46px,
+      rgba(74, 143, 110, 0.07) 46px,
+      rgba(74, 143, 110, 0.07) 48px
+    );
+  background-size:
+    72px 72px,
+    72px 72px,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    auto;
+}
+
+/* ─── Warm glow + fanoos lanterns ─── */
+
+.glow-warm {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 45% at 78% 16%, rgba(255, 200, 80, 0.2), transparent 60%),
+    radial-gradient(ellipse 55% 40% at 12% 84%, rgba(47, 107, 79, 0.2), transparent 58%);
+}
+
+.lantern {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 170' fill='none' stroke='%23c9a227' stroke-width='3.2' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M50 2v12'/%3E%3Cpath d='M44 20a6 6 0 1 1 12 0a6 6 0 1 1-12 0'/%3E%3Cpath d='M36 30h28l-5 11H41z'/%3E%3Cpath d='M41 41C21 60 21 104 39 122h22c18-18 18-62-2-81z'/%3E%3Cpath d='M39 122h22l-4 11H43z'/%3E%3Cpath d='M50 133v7'/%3E%3Cpath d='M45 146a5 5 0 1 1 10 0a5 5 0 1 1-10 0'/%3E%3Cpath d='M50 41v81M44 48v67M56 48v67'/%3E%3Cpath d='M24 70h52M26 100h48'/%3E%3C/svg%3E");
+}
+
+.lantern.alt {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 170' fill='none' stroke='%23c9a227' stroke-width='3.2' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M50 2v14'/%3E%3Cpath d='M43 22a7 7 0 1 1 14 0a7 7 0 1 1-14 0'/%3E%3Cpath d='M32 34h36l-7 10H39z'/%3E%3Cpath d='M39 44C17 66 17 100 34 118h32c17-18 17-52-5-74z'/%3E%3Cpath d='M34 118h32l-6 12H40z'/%3E%3Cpath d='M50 130v9'/%3E%3Cpath d='M43 148a7 7 0 1 1 14 0a7 7 0 1 1-14 0'/%3E%3Cpath d='M50 44v74'/%3E%3Cpath d='M22 81h56'/%3E%3Cpath d='M36 58 64 58M36 104 64 104'/%3E%3C/svg%3E");
+}
+
+.lantern.glow::before {
+  content: "";
+  position: absolute;
+  inset: 22% 16% 26%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 208, 92, 0.42), transparent 68%);
+  filter: blur(10px);
+}
+
+.lantern.hang::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  width: 2px;
+  height: 220px;
+  background: linear-gradient(180deg, transparent, var(--gold, #c9a227));
+  opacity: 0.35;
+}
+
+.crescent {
+  position: absolute;
+  top: 5.5rem;
+  right: 16%;
+  width: 5.25rem;
+  height: 5.25rem;
+  border-radius: 50%;
+  box-shadow: 1.7rem 1rem 0 0 rgba(255, 215, 94, 0.48);
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(0.3px);
+}
+
+/* ─── Chips ─── */
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(30, 61, 44, 0.72);
+  border: 1px solid rgba(47, 107, 79, 0.55);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #f6f7f9;
+}
+
+.chip.gold {
+  background: rgba(201, 162, 39, 0.15);
+  border-color: rgba(201, 162, 39, 0.5);
+  color: var(--gold-light);
+}
+
+.chip.ink {
+  background: rgba(15, 36, 25, 0.05);
+  border-color: rgba(15, 36, 25, 0.16);
+  color: var(--green-dark);
+}
+
+.chip.ink.gold {
+  background: rgba(201, 162, 39, 0.16);
+  border-color: rgba(168, 134, 28, 0.5);
+  color: #8a6d12;
+}
+
+[data-theme="dark"] .chip.ink {
+  background: rgba(30, 61, 44, 0.72);
+  border-color: rgba(47, 107, 79, 0.55);
+  color: #f6f7f9;
+}
+
+[data-theme="dark"] .chip.ink.gold {
+  background: rgba(201, 162, 39, 0.15);
+  border-color: rgba(201, 162, 39, 0.5);
+  color: var(--gold-light);
+}
+
+/* ─── Section bands (9-grid palettes) ─── */
+
+.band-forest,
+.cta-section,
+.site-footer {
+  --motif: #c9a227;
+}
+
+.band-emerald {
+  --motif: #7fe0ae;
+  background: #0d3b2a;
+  color: #f2fbf6;
+}
+
+.device-halo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(120%, 28rem);
+  height: min(120%, 28rem);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(127, 224, 174, 0.22), transparent 62%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.halo-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(108%, 24rem);
+  height: min(108%, 24rem);
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 215, 94, 0.28);
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .crescent {
+    right: 6%;
+    top: 4.25rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    box-shadow: 1.1rem 0.65rem 0 0 rgba(255, 215, 94, 0.45);
+  }
+
+  .lantern.hero-lantern--lg {
+    display: none;
+  }
+
+  .deal-scatter .hide-mobile {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lantern.glow::before {
+    filter: none;
+  }
+}
+
+/* ─── Coupon scatter (Instagram coupons post) ─── */
+
+.deal-scatter {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.deal-scatter .pct-tag {
+  position: absolute;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  color: rgba(201, 162, 39, 0.22);
+  line-height: 1;
+}
+
+.deal-scatter .pct-tag.faint {
+  color: rgba(168, 180, 196, 0.16);
+}
+
+.deal-scatter .pct-tag.outline {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(201, 162, 39, 0.2);
+}
+
+.mini-coupon {
+  --stub: 34px;
+  --c: 7px;
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr var(--stub);
+  align-items: center;
+  background: rgba(26, 43, 66, 0.55);
+  clip-path: polygon(
+    var(--c) 0,
+    calc(100% - var(--stub) - var(--c)) 0,
+    calc(100% - var(--stub)) var(--c),
+    calc(100% - var(--stub) + var(--c)) 0,
+    calc(100% - var(--c)) 0,
+    100% var(--c),
+    100% calc(100% - var(--c)),
+    calc(100% - var(--c)) 100%,
+    calc(100% - var(--stub) + var(--c)) 100%,
+    calc(100% - var(--stub)) calc(100% - var(--c)),
+    calc(100% - var(--stub) - var(--c)) 100%,
+    var(--c) 100%,
+    0 calc(100% - var(--c)),
+    0 var(--c)
+  );
+}
+
+.mini-coupon .mc-label {
+  padding-left: 12px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: rgba(221, 191, 74, 0.55);
+}
+
+.mini-coupon .mc-stub {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: rgba(201, 162, 39, 0.12);
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(221, 191, 74, 0.5);
+  border-left: 2px dashed rgba(201, 162, 39, 0.3);
+}
+
+.mini-coupon.gold {
+  background: rgba(201, 162, 39, 0.16);
+}
+
+.mini-coupon.green {
+  background: rgba(47, 107, 79, 0.45);
+}
+
+.waitlist-section .deal-scatter .pct-tag {
+  color: rgba(201, 162, 39, 0.28);
+}
+
+.waitlist-section .deal-scatter .pct-tag.faint {
+  color: rgba(168, 180, 196, 0.18);
+}
