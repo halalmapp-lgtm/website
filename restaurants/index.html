@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Grow your restaurant with HalalMapp. Join the Founding Restaurant Program — a limited GTA pilot for halal restaurants.">
+  <meta name="theme-color" content="#2F6B4F">
+  <title>For Restaurants — HalalMapp Founding Program</title>
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/favicon.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("halalmapp.theme");
+        var dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme = dark ? "dark" : "light";
+      } catch (_) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <img class="logo-image" src="/assets/halalmapp-logo-official.png" alt="" width="40" height="48">
+        <span>HalalMapp</span>
+      </a>
+      <nav class="nav-desktop" aria-label="Main">
+        <a href="/#features">Features</a>
+        <a href="/#diners">For Diners</a>
+        <a href="/restaurants" aria-current="page">For Restaurants</a>
+        <a href="/#contact">Contact</a>
+        <div class="nav-actions">
+          <a href="https://app.halalmapp.com" class="nav-signin">Sign in</a>
+          <a href="#apply" class="nav-cta">Join the program</a>
+        </div>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch color theme">
+        <svg class="theme-icon theme-icon--sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="theme-icon theme-icon--moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-nav" class="nav-mobile container" aria-label="Mobile">
+      <a href="/#features">Features</a>
+      <a href="/#diners">For Diners</a>
+      <a href="/restaurants">For Restaurants</a>
+      <a href="/#contact">Contact</a>
+      <a href="https://app.halalmapp.com">Sign in</a>
+      <a href="#apply">Join the program</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="partner-hero">
+      <div class="container partner-hero-grid">
+        <div>
+          <div class="hero-badge partner-badge">
+            <span class="hero-badge-dot"></span>
+            Limited GTA pilot · Greater Toronto Area
+          </div>
+          <h1>Grow your restaurant with HalalMapp</h1>
+          <p class="hero-tagline partner-tagline">
+            HalalMapp helps people discover halal restaurants in the GTA. We’re selecting a small group of Founding Restaurants for the first pilot — free for six months, no payment required.
+          </p>
+          <div class="hero-actions">
+            <a href="#apply" class="btn btn-primary">Join the Founding Restaurant Program</a>
+            <a href="https://www.instagram.com/halalmapp" class="btn btn-outline" target="_blank" rel="noopener">DM us on Instagram</a>
+          </div>
+        </div>
+        <aside class="partner-hero-card" aria-label="Pilot snapshot">
+          <p class="partner-kicker">At launch</p>
+          <p class="partner-stat"><strong>2,000+</strong> halal restaurants on the map</p>
+          <p class="partner-stat"><strong>GTA first</strong> Toronto and surrounding cities</p>
+          <p class="partner-stat"><strong>Limited seats</strong> we review every application</p>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split-grid">
+        <div class="split-content">
+          <span class="section-label">What HalalMapp is</span>
+          <h2 class="section-title">A map built for halal diners</h2>
+          <p class="section-subtitle" style="margin-bottom: 0;">
+            People open HalalMapp to find trusted halal spots nearby — then read community reports, save favorites, and claim offers from restaurants that participate.
+          </p>
+          <ul>
+            <li><span class="check-icon">✓</span> Your restaurant can already appear in our GTA launch dataset</li>
+            <li><span class="check-icon">✓</span> Diners search by area, not by whoever paid for ads</li>
+            <li><span class="check-icon">✓</span> Owners claim a listing and keep the details accurate</li>
+          </ul>
+        </div>
+        <div class="split-photo">
+          <img src="/assets/photos/dining.jpg" alt="Guests dining at a restaurant" width="900" height="700" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section id="program" class="features-section">
+      <div class="container">
+        <div class="features-intro">
+          <span class="section-label">Founding Restaurant Program</span>
+          <h2 class="section-title">What founding restaurants get</h2>
+          <p class="section-subtitle">
+            We are currently selecting a limited number of GTA restaurants for the initial pilot. Founding partners are not charged for the first six months.
+          </p>
+        </div>
+        <ul class="partner-perks">
+          <li>
+            <h3>Free access for 6 months</h3>
+            <p>Pilot restaurants receive complimentary HalalMapp business tools for six months. No payment is required to join the founding cohort.</p>
+          </li>
+          <li>
+            <h3>Claim and customize your listing</h3>
+            <p>Take ownership of your restaurant page, update information, and add photos so diners see the right details.</p>
+          </li>
+          <li>
+            <h3>Menu and hours where supported</h3>
+            <p>Keep hours, contact info, and menu details current from the business dashboard in the app.</p>
+          </li>
+          <li>
+            <h3>Engagement analytics</h3>
+            <p>See how diners find, save, and interact with your listing from the existing business reports.</p>
+          </li>
+          <li>
+            <h3>Coupons when you’re ready</h3>
+            <p>Create digital offers from the dashboard. Additional promotional tools are on the way — founding restaurants get early access.</p>
+          </li>
+          <li>
+            <h3>Featured in HalalMapp social content</h3>
+            <p>Opportunity to be included in HalalMapp Instagram posts and stories as we introduce the app to GTA diners.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <span class="section-label">How it works</span>
+        <h2 class="section-title">Three steps, then we handle the rest</h2>
+        <ol class="partner-steps">
+          <li>
+            <strong>Tell us about your restaurant</strong>
+            <span>The form below takes about a minute. If your listing is already on HalalMapp, you can match it.</span>
+          </li>
+          <li>
+            <strong>We review and contact you</strong>
+            <span>The HalalMapp team reviews GTA fit and follows up by email or Instagram. This is a limited pilot, not an automatic signup.</span>
+          </li>
+          <li>
+            <strong>Claim your listing in the app</strong>
+            <span>You’ll create a business account and complete the existing verification flow. Founding restaurants are not asked to pay.</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="apply" class="waitlist-section">
+      <div class="container">
+        <div class="waitlist-card partner-form-card">
+          <div class="waitlist-copy">
+            <span class="section-label">Apply</span>
+            <h2 class="section-title">Join the Founding Restaurant Program</h2>
+            <p class="section-subtitle">
+              Share a few details and we’ll review your restaurant. If you’re a fit for the GTA pilot, we’ll contact you with next steps.
+            </p>
+            <ul class="waitlist-perks">
+              <li><span class="check-icon">✓</span> Limited number of GTA restaurants</li>
+              <li><span class="check-icon">✓</span> No payment for founding pilots</li>
+              <li><span class="check-icon">✓</span> We’ll email you after review</li>
+            </ul>
+          </div>
+
+          <div id="partner-form-wrap">
+            <form class="partner-form" id="partner-form" novalidate>
+              <label class="waitlist-label" for="partner-restaurant">Restaurant name</label>
+              <div class="partner-suggest-wrap">
+                <input id="partner-restaurant" name="restaurant_name" type="text" required maxlength="120" autocomplete="organization" placeholder="e.g. Lahore Tikka House">
+                <ul class="partner-suggest" id="partner-suggest" hidden></ul>
+              </div>
+              <input type="hidden" id="partner-restaurant-id" name="restaurant_id">
+              <p class="partner-match" id="partner-match" hidden></p>
+
+              <label class="waitlist-label" for="partner-contact">Your name</label>
+              <input id="partner-contact" name="contact_name" type="text" required maxlength="80" autocomplete="name" placeholder="Owner or manager name">
+
+              <label class="waitlist-label" for="partner-email">Email</label>
+              <input id="partner-email" name="email" type="email" required maxlength="254" autocomplete="email" placeholder="you@restaurant.com">
+
+              <label class="waitlist-label" for="partner-phone">Phone <span class="optional">(optional)</span></label>
+              <input id="partner-phone" name="phone" type="tel" maxlength="40" autocomplete="tel" placeholder="416-555-0100">
+
+              <label class="waitlist-label" for="partner-link">Website or Instagram <span class="optional">(optional)</span></label>
+              <input id="partner-link" name="website_or_instagram" type="text" maxlength="300" placeholder="instagram.com/yourrestaurant">
+
+              <label class="waitlist-label" for="partner-location">Restaurant location</label>
+              <input id="partner-location" name="location" type="text" required maxlength="160" placeholder="City or street address in the GTA">
+
+              <label class="waitlist-label" for="partner-note">Anything we should know? <span class="optional">(optional)</span></label>
+              <textarea id="partner-note" name="note" maxlength="1000" rows="3" placeholder="Number of locations, hours, or a preferred contact time"></textarea>
+
+              <div class="waitlist-hp" aria-hidden="true">
+                <label for="partner-company">Company</label>
+                <input type="text" id="partner-company" name="company" tabindex="-1" autocomplete="off">
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="partner-submit">Join the Founding Restaurant Program</button>
+              <p class="waitlist-status" id="partner-status" role="status" aria-live="polite"></p>
+              <p class="waitlist-fineprint">
+                We only use this to review your restaurant and follow up. Read our <a href="/privacy">privacy policy</a>.
+              </p>
+            </form>
+
+            <div class="partner-success" id="partner-success" hidden>
+              <div class="status-icon success" aria-hidden="true">✓</div>
+              <h3>We received your restaurant</h3>
+              <p>
+                The HalalMapp team will review your restaurant and contact you if you’re a fit for the GTA founding pilot. You don’t need to pay anything at this stage.
+              </p>
+              <p>
+                Questions in the meantime? Email <a href="mailto:halalmapp@gmail.com">halalmapp@gmail.com</a>
+                or DM <a href="https://www.instagram.com/halalmapp" target="_blank" rel="noopener">@halalmapp</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <img class="logo-image" src="/assets/halalmapp-logo-official.png" alt="" width="40" height="48" loading="lazy">
+            <span>HalalMapp</span>
+          </a>
+          <p>Find halal restaurants near you. Discover, review, save favorites, and unlock deals from local businesses.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="/#features">Features</a>
+          <a href="/#diners">For Diners</a>
+          <a href="/restaurants">For Restaurants</a>
+          <a href="/#waitlist">Join the waitlist</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="https://www.instagram.com/halalmapp" target="_blank" rel="noopener">Instagram</a>
+          <a href="mailto:halalmapp@gmail.com">halalmapp@gmail.com</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="/business-agreement">Business Agreement</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 HalalMapp. All rights reserved.</span>
+        <span>Find Halal. Eat Well.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/config.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

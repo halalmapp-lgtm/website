@@ -12,6 +12,11 @@
   status = 301
 
 [[redirects]]
+  from = "/business-agreement"
+  to = "/business-agreement/"
+  status = 301
+
+[[redirects]]
   from = "/subscribe/success"
   to = "/subscribe/success/"
   status = 301
@@ -19,6 +24,16 @@
 [[redirects]]
   from = "/subscribe/cancel"
   to = "/subscribe/cancel/"
+  status = 301
+
+[[redirects]]
+  from = "/restaurants"
+  to = "/restaurants/"
+  status = 301
+
+[[redirects]]
+  from = "/partners"
+  to = "/restaurants/"
   status = 301
 
 [[headers]]
