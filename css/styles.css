@@ -1365,6 +1365,23 @@ section {
   margin-top: 0.25rem;
 }
 
+.partner-call {
+  margin: 1.5rem 0 0;
+  padding: 1.15rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-muted);
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.partner-call strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--text);
+}
+
 .optional {
   font-weight: 400;
   color: var(--text-light);
