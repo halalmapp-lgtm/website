@@ -1663,6 +1663,30 @@ section {
   margin-right: 0.25rem;
 }
 
+.legal-summary {
+  margin: 0 0 2rem;
+  padding: 1.1rem 1.35rem;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary, #2F6B4F);
+  border-radius: 10px;
+  background: var(--surface-muted, #f6f3ee);
+}
+
+.legal-summary h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
+}
+
+.legal-summary ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.legal-summary li {
+  margin: 0.35rem 0;
+  font-size: 0.9375rem;
+}
+
 .legal-table {
   width: 100%;
   border-collapse: collapse;
