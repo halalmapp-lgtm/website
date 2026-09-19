@@ -457,3 +457,152 @@ main,
 .waitlist-section .deal-scatter .pct-tag.faint {
   color: rgba(168, 180, 196, 0.18);
 }
+
+/* ─── Connect (Linktree-style scan page) ─── */
+
+.connect-page {
+  min-height: 100vh;
+  background: #0f2419;
+  color: #f6f7f9;
+}
+
+html:has(body.connect-page) {
+  background: #0f2419;
+}
+
+body.connect-page::before {
+  display: none;
+}
+
+.connect-page .motif-lattice {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.connect {
+  position: relative;
+  z-index: 1;
+  width: min(26rem, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2.4rem 0 3rem;
+  text-align: center;
+}
+
+.connect-logo {
+  width: 4.4rem;
+  height: auto;
+  margin: 0 auto 0.7rem;
+  display: block;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.28));
+}
+
+.connect-arabic {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display), "Amiri", Georgia, serif;
+  font-size: 1.35rem;
+  color: #ddbf4a;
+  line-height: 1;
+}
+
+.connect h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #f6f7f9;
+}
+
+.connect h1 span { color: #ddbf4a; }
+
+.connect-slogan {
+  margin: 0.55rem 0 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ddbf4a;
+}
+
+.connect-lead {
+  margin: 0.85rem auto 1.5rem;
+  max-width: 22rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: rgba(246, 247, 249, 0.72);
+}
+
+.connect-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  text-align: left;
+}
+
+.connect-link {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.85rem 1rem;
+  background: #fffdf6;
+  color: #0f2419;
+  border: 1px solid rgba(201, 162, 39, 0.4);
+  border-radius: 16px;
+  text-decoration: none;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+}
+
+.connect-link:hover,
+.connect-link:focus-visible {
+  transform: translateY(-1px);
+  border-color: #c9a227;
+}
+
+.connect-ico {
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #e8f2ec;
+  color: #1f4f3a;
+}
+
+.connect-ico svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.connect-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  min-width: 0;
+}
+
+.connect-copy strong {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.connect-copy span {
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: #4a5a50;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 28rem;
+  margin-top: 1.25rem;
+}
+
+.contact-links .connect-link {
+  box-shadow: var(--shadow);
+}

@@ -36,6 +36,16 @@
   to = "/restaurants/"
   status = 301
 
+[[redirects]]
+  from = "/qr"
+  to = "/qr/"
+  status = 301
+
+[[redirects]]
+  from = "/connect"
+  to = "/connect/"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]
