@@ -487,8 +487,32 @@ body.connect-page::before {
   z-index: 1;
   width: min(26rem, calc(100% - 2rem));
   margin: 0 auto;
-  padding: 2.4rem 0 3rem;
+  padding: 1.25rem 0 3rem;
   text-align: center;
+}
+
+.connect-register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 0 1.6rem;
+  padding: 1.2rem 1.25rem;
+  background: #ddbf4a;
+  color: #0f2419;
+  border-radius: 16px;
+  text-decoration: none;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+}
+
+.connect-register:hover,
+.connect-register:focus-visible {
+  background: #e8cc62;
+  color: #0f2419;
+  transform: translateY(-1px);
 }
 
 .connect-logo {
