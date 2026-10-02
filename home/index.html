@@ -38,7 +38,7 @@
         <a href="#contact">Contact</a>
         <div class="nav-actions">
           <a href="https://app.halalmapp.com" class="nav-signin">Sign in</a>
-          <a href="#waitlist" class="nav-cta">Join the waitlist</a>
+          <a href="#join" class="nav-cta">Join the waitlist</a>
         </div>
       </nav>
       <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch color theme">
@@ -61,7 +61,7 @@
       <a href="/restaurants">For Restaurants</a>
       <a href="#contact">Contact</a>
       <a href="https://app.halalmapp.com">Sign in</a>
-      <a href="#waitlist">Join the waitlist</a>
+      <a href="#join">Join the waitlist</a>
     </nav>
   </header>
 
@@ -99,8 +99,30 @@
           <p class="hero-tagline">
             HalalMapp is launching in the Greater Toronto Area with over 2,000 halal restaurants — discover trusted spots on the map, read community reviews, save favorites, and unlock exclusive deals.
           </p>
+          <form class="waitlist-form hero-waitlist" id="join" novalidate>
+            <label class="waitlist-label" for="hero-waitlist-email">Join the waitlist — we’ll email you the day we launch</label>
+            <div class="waitlist-field">
+              <input
+                type="email"
+                id="hero-waitlist-email"
+                name="email"
+                inputmode="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+                aria-describedby="hero-waitlist-status">
+              <button type="submit" class="btn btn-primary">Notify me</button>
+            </div>
+
+            <div class="waitlist-hp" aria-hidden="true">
+              <label for="hero-waitlist-company">Company</label>
+              <input type="text" id="hero-waitlist-company" name="company" tabindex="-1" autocomplete="off">
+            </div>
+
+            <p class="waitlist-status" id="hero-waitlist-status" role="status" aria-live="polite"></p>
+          </form>
           <div class="hero-actions">
-            <a href="https://app.halalmapp.com" class="btn btn-primary">Sign in to HalalMapp</a>
+            <a href="https://app.halalmapp.com" class="btn btn-ghost">Sign in to HalalMapp</a>
             <a href="#download" class="btn btn-ghost">Download the app</a>
             <a href="/restaurants" class="btn btn-ghost">List your restaurant</a>
           </div>

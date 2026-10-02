@@ -3,6 +3,7 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/", "destination": "/connect", "permanent": false },
+    { "source": "/waitlist", "destination": "/home", "permanent": false },
     { "source": "/partners", "destination": "/restaurants", "permanent": true }
   ],
   "headers": [

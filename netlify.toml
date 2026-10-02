@@ -8,6 +8,11 @@
   force = true
 
 [[redirects]]
+  from = "/waitlist"
+  to = "/home/"
+  status = 302
+
+[[redirects]]
   from = "/privacy"
   to = "/privacy/"
   status = 301
