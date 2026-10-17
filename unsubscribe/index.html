@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta name="referrer" content="no-referrer">
+  <title>Unsubscribe — HalalMapp</title>
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/favicon.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/brand.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <img class="logo-image" src="/assets/halalmapp-logo-official.png" alt="" width="40" height="48">
+        <span>Halal<span class="logo-accent">Mapp</span></span>
+      </a>
+    </div>
+  </header>
+
+  <main class="status-page">
+    <div class="status-card">
+      <h1 id="unsub-title">Unsubscribe from HalalMapp emails</h1>
+      <p id="unsub-copy">
+        Confirm below and we will not email this address about HalalMapp again.
+      </p>
+      <button id="unsub-button" type="button" class="btn btn-primary" style="display: inline-flex;">Unsubscribe</button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <span>&copy; 2026 HalalMapp</span>
+        <span><a href="mailto:halalmapp@gmail.com" style="color: rgba(255,255,255,0.65);">Need help?</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/config.js"></script>
+  <script>
+    (function () {
+      var token = new URLSearchParams(location.search).get('t') || '';
+      var title = document.getElementById('unsub-title');
+      var copy = document.getElementById('unsub-copy');
+      var button = document.getElementById('unsub-button');
+      var contact = window.HALALMAPP_CONFIG.CONTACT_EMAIL;
+
+      function fail() {
+        title.textContent = 'We could not process this link';
+        copy.textContent = 'Email ' + contact + ' with the word STOP and we will remove you by hand.';
+        button.style.display = 'none';
+      }
+
+      if (!token) return fail();
+
+      button.addEventListener('click', function () {
+        button.disabled = true;
+        button.textContent = 'Unsubscribing…';
+        fetch(window.HALALMAPP_CONFIG.SUPABASE_URL + '/functions/v1/unsubscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ t: token }),
+        })
+          .then(function (res) { return res.json().then(function (body) { return { ok: res.ok, body: body }; }); })
+          .then(function (result) {
+            if (!result.ok || !result.body.ok) return fail();
+            title.textContent = 'You are unsubscribed';
+            copy.textContent = result.body.email + ' will not receive any more HalalMapp emails.';
+            button.style.display = 'none';
+          })
+          .catch(fail);
+      });
+    })();
+  </script>
+</body>
+</html>
