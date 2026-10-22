@@ -81,6 +81,7 @@
     const honeypot = form.querySelector('input[name="company"]');
     const submit = form.querySelector('button[type="submit"]');
     const status = form.querySelector(".waitlist-status");
+    const submitLabel = submit.textContent;
 
     function setStatus(message, state) {
       status.textContent = message;
@@ -90,7 +91,7 @@
     function setBusy(busy) {
       submit.disabled = busy;
       emailInput.disabled = busy;
-      submit.textContent = busy ? "Joining…" : "Notify me";
+      submit.textContent = busy ? "Joining…" : submitLabel;
     }
 
     function looksLikeEmail(value) {
