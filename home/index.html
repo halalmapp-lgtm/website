@@ -79,10 +79,13 @@
           </div>
         </div>
         <div class="stage" aria-hidden="true">
-          <picture>
-            <source srcset="/assets/app-map-phone.webp" type="image/webp">
-            <img class="phone" src="/assets/app-map-phone.png" alt="" width="771" height="1600">
-          </picture>
+          <div class="phone device">
+            <video class="device-screen" autoplay muted loop playsinline preload="auto" poster="/assets/hero-map-poster.jpg">
+              <source src="/assets/hero-map.webm" type="video/webm">
+              <source src="/assets/hero-map.mp4" type="video/mp4">
+            </video>
+            <img class="device-frame" src="/assets/iphone-frame.png" alt="" width="771" height="1600">
+          </div>
           <div class="float f1">
             <span class="ico" style="background:rgba(127,209,166,.16);color:var(--mint)">✓</span>
             <div><strong>Verified halal</strong><span>Certificate reviewed</span></div>
