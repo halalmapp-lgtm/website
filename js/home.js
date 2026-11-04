@@ -17,6 +17,22 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
+  // Pricing: switch paid plans between monthly and yearly prices.
+  const billingButtons = document.querySelectorAll(".price-toggle button");
+  billingButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      const period = button.dataset.billing;
+      billingButtons.forEach(function (b) { b.setAttribute("aria-pressed", String(b === button)); });
+      document.querySelectorAll(".plan-price[data-monthly]").forEach(function (price) {
+        price.querySelector("b").textContent = price.dataset[period];
+        price.querySelector("span").textContent = period === "yearly" ? "/year" : "/month";
+      });
+      document.querySelectorAll(".plan-note[data-monthly]").forEach(function (note) {
+        note.textContent = note.dataset[period];
+      });
+    });
+  });
+
   // Hero phone recording: hold on the poster frame for reduced-motion visitors.
   const screen = document.querySelector(".device-screen");
   if (screen && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
