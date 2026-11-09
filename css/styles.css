@@ -1738,6 +1738,15 @@ section {
   font-weight: 600;
 }
 
+/* Wide schedule tables scroll inside their own box on phones. */
+@media (max-width: 640px) {
+  .legal-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 .legal-body h3 {
   font-size: 1.05rem;
   font-weight: 600;
