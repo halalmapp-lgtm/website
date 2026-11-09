@@ -170,7 +170,7 @@
   }
 })();
 
-// ─── Founding restaurant interest form ───
+// ─── Restaurant interest form ───
 (function () {
   const form = document.getElementById("partner-form");
   if (!form) return;
@@ -182,6 +182,7 @@
   const matchNote = document.getElementById("partner-match");
   const honeypot = document.getElementById("partner-company");
   const submit = document.getElementById("partner-submit");
+  const submitLabel = submit ? submit.textContent : "";
   const status = document.getElementById("partner-status");
   const success = document.getElementById("partner-success");
   const config = window.HALALMAPP_CONFIG || {};
@@ -339,7 +340,7 @@
       );
     } finally {
       submit.disabled = false;
-      submit.textContent = "Join the Founding Restaurant Program";
+      submit.textContent = submitLabel;
     }
   });
 })();
