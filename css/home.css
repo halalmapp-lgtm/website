@@ -87,6 +87,16 @@ h2 em { font-style: normal; color: var(--gold); }
 .waitlist-status.is-success { color: var(--mint); }
 .waitlist-status.is-error { color: var(--amber); }
 
+/* Hero sign-up: small label, underlined email field, store badges below */
+.signup--hero .signup-label { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.signup--hero .signup-row { align-items: flex-end; gap: 16px; padding: 0; border: 0; border-radius: 0; background: none; }
+.signup--hero input[type="email"] { padding: 12px 2px; border-bottom: 2px solid rgba(247, 242, 228, 0.35); transition: border-color 0.2s; }
+.signup--hero input[type="email"]:focus { border-bottom-color: var(--gold); }
+.hero-stores { display: flex; align-items: center; gap: 8px 10px; flex-wrap: wrap; margin: 4px 0 14px; }
+.store-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; border-radius: 9px; border: 1px solid var(--faint); font-size: 0.74rem; font-weight: 500; color: var(--muted); }
+.store-badge svg { width: 14px; height: 14px; fill: currentColor; }
+.hero-stores small { font-size: 0.72rem; color: rgba(247, 242, 228, 0.5); }
+
 /* Hero */
 .hero { min-height: 100vh; min-height: 100svh; display: grid; align-items: center; padding: 140px 0 80px; overflow: hidden; }
 .hero-bg { position: absolute; inset: 0; opacity: 0.28; }
@@ -273,6 +283,7 @@ h1 em { font-style: normal; background: linear-gradient(90deg, var(--gold), var(
   .status-grid, .price-grid { grid-template-columns: 1fr; }
   .plan-tag, .plan-note { min-height: 0; }
   .signup-row { flex-direction: column; border-radius: 22px; }
+  .signup--hero .signup-row { align-items: stretch; border-radius: 0; }
   .signup input[type="email"] { padding: 12px 14px; }
   .stamps { display: none; }
   .t-comm { min-height: 220px !important; }
