@@ -92,10 +92,11 @@ h2 em { font-style: normal; color: var(--gold); }
 .signup--hero .signup-row { align-items: flex-end; gap: 16px; padding: 0; border: 0; border-radius: 0; background: none; }
 .signup--hero input[type="email"] { padding: 12px 2px; border-bottom: 2px solid rgba(247, 242, 228, 0.35); transition: border-color 0.2s; }
 .signup--hero input[type="email"]:focus { border-bottom-color: var(--gold); }
-.hero-stores { display: flex; align-items: center; gap: 8px 10px; flex-wrap: wrap; margin: 4px 0 14px; }
-.store-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; border-radius: 9px; border: 1px solid var(--faint); font-size: 0.74rem; font-weight: 500; color: var(--muted); }
+.hero-stores { display: flex; align-items: center; gap: 16px 10px; flex-wrap: wrap; margin: 20px 0 14px; }
+.store-badge { position: relative; display: inline-flex; align-items: center; gap: 6px; padding: 10px 12px 7px; border-radius: 9px; border: 1px solid var(--faint); font-size: 0.74rem; font-weight: 500; color: var(--muted); }
 .store-badge svg { width: 14px; height: 14px; fill: currentColor; }
-.hero-stores small { font-size: 0.72rem; color: rgba(247, 242, 228, 0.5); }
+.store-badge em { position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); padding: 1px 7px; border-radius: 999px; background: var(--ink); border: 1px solid rgba(212, 173, 47, 0.45); font-style: normal; font-size: 0.56rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-soft); white-space: nowrap; line-height: 1.5; }
+.waitlist-status:empty { min-height: 0; margin-top: 0; }
 
 /* Hero */
 .hero { min-height: 100vh; min-height: 100svh; display: grid; align-items: center; padding: 140px 0 80px; overflow: hidden; }
@@ -283,7 +284,13 @@ h1 em { font-style: normal; background: linear-gradient(90deg, var(--gold), var(
   .status-grid, .price-grid { grid-template-columns: 1fr; }
   .plan-tag, .plan-note { min-height: 0; }
   .signup-row { flex-direction: column; border-radius: 22px; }
-  .signup--hero .signup-row { align-items: stretch; border-radius: 0; }
+  .signup--hero .signup-row { align-items: stretch; border-radius: 0; gap: 10px; }
+  .hero { padding-top: 98px; }
+  h1 { margin: 16px 0 14px; }
+  .lede { font-size: 1rem; line-height: 1.55; }
+  .signup { margin-top: 22px; }
+  .stage { height: 540px; margin-top: 4px; }
+  .stage .phone { width: 250px; }
   .signup input[type="email"] { padding: 12px 14px; }
   .stamps { display: none; }
   .t-comm { min-height: 220px !important; }
