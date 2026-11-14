@@ -234,6 +234,7 @@ h1 em { font-style: normal; background: linear-gradient(90deg, var(--gold), var(
 .plan { padding: 28px 24px; border-radius: var(--r); background: rgba(247, 242, 228, 0.04); border: 1px solid var(--faint); }
 .plan--featured { background: var(--forest-2); border-color: rgba(212, 173, 47, 0.55); }
 .plan h3 { font-size: 1.3rem; letter-spacing: -0.02em; }
+.plan-badge { display: inline-block; vertical-align: middle; margin-left: 6px; padding: 4px 10px; border-radius: 999px; background: var(--gold); color: var(--ink); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.02em; white-space: nowrap; }
 .plan-tag { color: var(--muted); font-size: 0.85rem; line-height: 1.45; margin-top: 4px; min-height: 2.5em; }
 .plan-price { margin-top: 18px; display: flex; align-items: baseline; gap: 4px; }
 .plan-price b { font-size: 2.1rem; font-weight: 800; letter-spacing: -0.04em; }
