@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HalalMapp is the map of 2,000+ halal restaurants in the Greater Toronto Area, with honest halal labels, community reviews and deals from local kitchens. Launching fall 2026.">
+  <meta name="description" content="HalalMapp is the map of 3,000+ halal restaurants in the Greater Toronto Area, with honest halal labels, community reviews and deals from local kitchens. Launching fall 2026.">
   <meta name="theme-color" content="#07130d">
   <title>HalalMapp — Find Halal. Eat Well.</title>
   <link rel="canonical" href="https://halalmapp.com/home">
   <meta property="og:type" content="website">
   <meta property="og:title" content="HalalMapp — Every halal spot in the GTA. One map.">
-  <meta property="og:description" content="2,000+ halal restaurants with honest halal labels, community reviews and local deals. Launching fall 2026 in the Greater Toronto Area.">
+  <meta property="og:description" content="3,000+ halal restaurants with honest halal labels, community reviews and local deals. Launching fall 2026 in the Greater Toronto Area.">
   <meta property="og:url" content="https://halalmapp.com/home">
   <meta property="og:image" content="https://halalmapp.com/assets/spots/backyard-ribs.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -18,7 +18,7 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Oswald:wght@600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="/css/home.css">
 </head>
@@ -62,7 +62,7 @@
         <div>
           <span class="pill"><i></i>Launching fall 2026 · Greater Toronto Area</span>
           <h1>Every halal spot<br>in the GTA.<br><em>One map.</em></h1>
-          <p class="lede">2,000+ halal restaurants, labelled by where the halal info actually comes from, with reviews from the community and deals from local kitchens.</p>
+          <p class="lede">3,000+ halal restaurants, labelled by where the halal info actually comes from, with reviews from the community and deals from local kitchens.</p>
           <div class="join-card">
           <form class="waitlist-form signup signup--hero" id="join" novalidate>
             <label class="signup-label" for="hero-waitlist-email">Join the waitlist</label>
@@ -174,12 +174,25 @@
         </div>
         <div class="bento">
           <div class="tile t-map reveal">
-            <picture>
-              <source srcset="/assets/app-map-phone.webp" type="image/webp">
-              <img class="shot" src="/assets/app-map-phone.png" alt="The HalalMapp map showing halal restaurants across downtown Toronto" width="771" height="1600" loading="lazy">
-            </picture>
+            <div class="mapviz" role="img" aria-label="Map of the GTA filling with 3,000+ halal restaurants">
+              <svg class="mapviz-streets" viewBox="0 0 800 420" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M-20 300 C 160 270, 300 330, 470 290 S 700 250, 820 280"/>
+                <path d="M-20 360 C 200 345, 420 380, 820 350"/>
+                <path d="M60 -10 L 130 140 L 90 260 L 150 430"/>
+                <path d="M260 -10 L 300 120 L 250 210 L 320 430"/>
+                <path d="M470 -10 L 430 110 L 520 200 L 480 430"/>
+                <path d="M650 -10 L 700 130 L 640 260 L 700 430"/>
+                <path d="M-20 120 L 180 90 L 380 150 L 560 100 L 820 140"/>
+                <path d="M-20 210 L 240 190 L 420 230 L 820 200"/>
+                <path d="M520 40 L 620 60 L 700 30 L 780 70"/>
+                <path d="M330 60 L 420 40 L 460 80"/>
+              </svg>
+              <div class="mapviz-dots" aria-hidden="true"></div>
+              <div class="mapviz-count"><b data-target="3000">3,000+</b><span>halal restaurants</span></div>
+              <span class="mapviz-pill">All in one map</span>
+            </div>
             <span class="chip v">Live map</span>
-            <h3>2,000+ spots across the GTA</h3>
+            <h3>3,000+ spots across the GTA</h3>
             <p>Search by craving or neighbourhood, filter by cuisine, open now or halal label, and see it all on one map.</p>
           </div>
           <div class="tile t-deals reveal">
@@ -192,9 +205,11 @@
             <div><h3>Deals from local kitchens</h3><p>Claim a deal in the app, show it at the counter.</p></div>
           </div>
           <div class="tile t-comm reveal">
+            <div>
+              <h3>A community that checks</h3>
+              <p>Reviews, halal reports, been-here stamps and leaderboards from people who actually ate there.</p>
+            </div>
             <div class="stamps" aria-hidden="true"><span class="on">✓</span><span class="on">✓</span><span class="on">✓</span><span></span><span class="on">✓</span><span></span><span></span><span></span></div>
-            <h3>A community that checks</h3>
-            <p>Reviews, halal reports, been-here stamps and leaderboards from people who actually ate there.</p>
           </div>
           <div class="tile t-lists photo reveal">
             <picture>
