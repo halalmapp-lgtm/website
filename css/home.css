@@ -102,6 +102,17 @@ h2 em { font-style: normal; color: var(--gold); }
 .hero-meta.hero-meta--below { display: none; }
 .waitlist-status:empty { min-height: 0; margin-top: 0; }
 
+/* Hero sign-up card: the page's main call to action */
+.join-card { position: relative; max-width: 540px; margin-top: 28px; padding: 22px 24px 18px; border-radius: 24px; background: linear-gradient(160deg, rgba(47, 107, 79, 0.42), rgba(7, 19, 13, 0.72) 70%); border: 1px solid rgba(212, 173, 47, 0.5); box-shadow: 0 0 0 4px rgba(212, 173, 47, 0.06), 0 24px 60px rgba(0, 0, 0, 0.45), 0 0 48px rgba(212, 173, 47, 0.14); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.join-card .signup { margin-top: 0; max-width: none; }
+.join-title { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; margin: -2px 0 8px; color: var(--cream); }
+.join-note { font-size: 0.78rem; color: rgba(247, 242, 228, 0.55); margin-top: 2px; }
+.join-note a { color: var(--gold-soft); }
+.btn-join { padding: 14px 24px; font-size: 0.98rem; box-shadow: 0 8px 24px rgba(212, 173, 47, 0.35); }
+.btn-join::after { content: "→"; display: inline-block; transition: transform 0.2s; }
+.btn-join:hover::after { transform: translateX(3px); }
+.join-card .hero-stores { max-width: none; margin: 16px 0 0; padding-top: 16px; border-top: 1px solid var(--faint); }
+
 /* Hero */
 .hero { min-height: 100vh; min-height: 100svh; display: grid; align-items: center; padding: 140px 0 80px; overflow: hidden; }
 .hero-bg { position: absolute; inset: 0; opacity: 0.28; }
@@ -110,7 +121,7 @@ h2 em { font-style: normal; color: var(--gold); }
 .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: center; }
 .pill { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px 7px 8px; border-radius: 999px; background: var(--faint); border: 1px solid rgba(212, 173, 47, 0.35); font-size: 0.8rem; color: var(--gold-soft); }
 .pill i { width: 8px; height: 8px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 0 4px rgba(127, 209, 166, 0.2); margin-left: 6px; }
-h1 { font-size: clamp(2.8rem, 7vw, 6.2rem); line-height: 0.98; letter-spacing: -0.04em; font-weight: 800; margin: 24px 0 22px; }
+h1 { font-size: clamp(2.8rem, 5.6vw, 4.9rem); line-height: 0.98; letter-spacing: -0.04em; font-weight: 800; margin: 22px 0 18px; }
 h1 em { font-style: normal; background: linear-gradient(90deg, var(--gold), var(--gold-soft)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .lede { font-size: 1.15rem; color: var(--muted); max-width: 540px; line-height: 1.6; }
 .hero-meta { margin-top: 6px; font-size: 0.85rem; color: rgba(247, 242, 228, 0.5); display: flex; gap: 8px 18px; flex-wrap: wrap; }
@@ -298,6 +309,10 @@ h1 em { font-style: normal; background: linear-gradient(90deg, var(--gold), var(
   .plan-tag, .plan-note { min-height: 0; }
   .signup-row { flex-direction: column; border-radius: 22px; }
   .signup--hero .signup-row { align-items: stretch; border-radius: 0; gap: 10px; }
+  .join-card { margin-top: 20px; padding: 16px 16px 14px; border-radius: 20px; }
+  .join-title { font-size: 1.12rem; margin-bottom: 2px; }
+  .signup--hero input[type="email"] { padding-top: 8px; padding-bottom: 8px; }
+  .join-card .hero-stores { margin-top: 12px; padding-top: 12px; }
   .hero { padding-top: 98px; }
   h1 { margin: 16px 0 14px; }
   .lede { font-size: 1rem; line-height: 1.55; }
@@ -313,6 +328,13 @@ h1 em { font-style: normal; background: linear-gradient(90deg, var(--gold), var(
   .owner-card { aspect-ratio: 4 / 5; }
   .owner-steps { left: 14px; right: 14px; bottom: 14px; padding: 16px; }
   .footer-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) and (max-height: 620px) {
+  .hero { padding-top: 92px; }
+  h1 { font-size: 2.45rem; margin: 12px 0 10px; }
+  .lede { font-size: 0.92rem; line-height: 1.5; }
+  .join-card { margin-top: 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
