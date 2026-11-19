@@ -78,9 +78,10 @@
       const FILL_MS = 1900, start = performance.now();
       let drawn = 0;
       const tick = function (now) {
-        const t = Math.min(1, (now - start) / FILL_MS);
+        // The first frame's timestamp can be a little before `start`, so clamp at 0.
+        const t = Math.min(1, Math.max(0, (now - start) / FILL_MS));
         const eased = 1 - Math.pow(1 - t, 2.4);
-        const upto = Math.round(eased * points.length);
+        const upto = Math.max(drawn, Math.round(eased * points.length));
         drawDots(drawn, upto); drawn = upto;
         countEl.textContent = Math.round(eased * target).toLocaleString("en-CA");
         if (t < 1) requestAnimationFrame(tick);
