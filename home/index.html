@@ -18,7 +18,7 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Oswald:wght@600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="/css/home.css">
 </head>
@@ -174,22 +174,10 @@
         </div>
         <div class="bento">
           <div class="tile t-map reveal">
-            <div class="mapviz" role="img" aria-label="Map of the GTA filling with 3,000+ halal restaurants">
-              <svg class="mapviz-streets" viewBox="0 0 800 420" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M-20 300 C 160 270, 300 330, 470 290 S 700 250, 820 280"/>
-                <path d="M-20 360 C 200 345, 420 380, 820 350"/>
-                <path d="M60 -10 L 130 140 L 90 260 L 150 430"/>
-                <path d="M260 -10 L 300 120 L 250 210 L 320 430"/>
-                <path d="M470 -10 L 430 110 L 520 200 L 480 430"/>
-                <path d="M650 -10 L 700 130 L 640 260 L 700 430"/>
-                <path d="M-20 120 L 180 90 L 380 150 L 560 100 L 820 140"/>
-                <path d="M-20 210 L 240 190 L 420 230 L 820 200"/>
-                <path d="M520 40 L 620 60 L 700 30 L 780 70"/>
-                <path d="M330 60 L 420 40 L 460 80"/>
-              </svg>
-              <div class="mapviz-dots" aria-hidden="true"></div>
-              <div class="mapviz-count"><b data-target="3000">3,000+</b><span>halal restaurants</span></div>
-              <span class="mapviz-pill">All in one map</span>
+            <div class="gtamap" role="img" aria-label="Map of the Greater Toronto Area with a dot for every halal restaurant on HalalMapp">
+              <canvas class="gtamap-canvas" aria-hidden="true"></canvas>
+              <span class="gtamap-brand"><img src="/assets/halalmapp-logo-official.png" alt="" width="14" height="18"><span>Halal<b>Mapp</b></span></span>
+              <div class="gtamap-count"><b data-target="3000">3,000</b><span>places to eat</span></div>
             </div>
             <span class="chip v">Live map</span>
             <h3>3,000+ spots across the GTA</h3>
